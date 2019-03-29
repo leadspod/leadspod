@@ -207,6 +207,9 @@
 /* ---- Start of max-width 380px CSS ---- */
 @media all and (max-width: 380px) {
     .header-btn{ margin-right: 50px; padding:0px;}
+    #header > div > nav > div.d-flex.menu-wrap.align-items-center > a {
+      display: none;
+    }
 }
 /* ---- End of max-width 380px CSS ---- */
 /* ---- Start of max-width 380px CSS ---- */
