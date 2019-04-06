@@ -5,7 +5,7 @@ var fq_colors = {
       "question": "What is your favorite color hue?",
       "options": {
         "red": {
-          "label": "Red",
+          "label": "<span>a</span><span>Red</span>",
           "val": "red",
           "classes": "hue-red",
           "nextQ": 2

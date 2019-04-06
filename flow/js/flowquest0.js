@@ -40,7 +40,7 @@ var flowquest = function(fq) {
          */
         , elContainer
         /**
-         * Object to keep track of all references
+         * Object to keep track of all references 
          * @type {Object}
          */
         , oReferences = {
@@ -60,7 +60,7 @@ var flowquest = function(fq) {
         /**
          * start flowquest processing
          * @param  {object}     data    the flowquest data object
-         * @return {void}               nothing
+         * @return {void}               nothing 
          */
         , _start = function (data) {
             console.log('starting...');
@@ -68,7 +68,7 @@ var flowquest = function(fq) {
 
             if (bUsePushState) {
                 window.addEventListener('popstate', function(e) {
-                    var
+                    var 
                         oQuestion = e.state
                     ;
                     // e.state is equal to the data-attribute of the last image we clicked
@@ -87,7 +87,7 @@ var flowquest = function(fq) {
          * @return {void}
          */
         , _newPageQuestion = function(qid, data) {
-            var
+            var 
                 title = data.question
                 , url = title.replace(' ', '-')
                 , oQuestion = {
@@ -101,8 +101,8 @@ var flowquest = function(fq) {
         /**
          * build a question
          * @param  {number}     qid     the question number to build
-         * @return {void}               nothing
-         */
+         * @return {void}               nothing 
+         */ 
         , _buildQuestion = function (qid) {
             // questions
             var thisQ = oQuestions[qid]
@@ -110,7 +110,7 @@ var flowquest = function(fq) {
                 , questionTagID = oReferences.QTagPrefix + qid
                 , questionClasses = oReferences.QTagBaseClass + ' ' + oReferences.QTagActiveClass
                 , questionTxt = qid + '. ' + thisQ.question
-
+                
                 // answer options
                 , newOptTag = oReferences.OptTag
                 , newOptElPrefix = oReferences.OptPrefix
@@ -121,7 +121,7 @@ var flowquest = function(fq) {
                 , oOptions = thisQ['options']
                 , sCustomOptionClasses
             ;
-
+            
             var questionEl = _appendChild({
                 elParent: elContainer,
                 newTag:   questionTag,
@@ -158,7 +158,7 @@ var flowquest = function(fq) {
             _start();
         }()
     ;
-
+    
     /**
      * Answer selection callback
      * @this        {DOMElement}    The DOM element of the answer
@@ -181,7 +181,7 @@ var flowquest = function(fq) {
     /**
      * Move to the next question
      * @param   {DOMElement}    thisQ           the DOM element of the current question
-     * @param   {string}        thisAnswerData  the answer data string
+     * @param   {string}        thisAnswerData  the answer data string 
      * @return  {void}          nothing
      */
     function _nextQuestion(thisQ, thisAnswerData) {
@@ -195,12 +195,12 @@ var flowquest = function(fq) {
         if (!fq.questions[currentQueston]['options'][thisAnswerData].nextQ) {
             return _endAllQuestions();
         }
-
+        
         var nextQuestion = fq.questions[currentQueston]['options'][thisAnswerData].nextQ
             , bMoreQuestions = fq.questions[nextQuestion] ? true : false
         ;
 
-        // if more questions are available, build the next question
+        // if more questions are available, build the next question 
         if (bMoreQuestions) {
             _buildQuestion(nextQuestion);
             currentQueston = nextQuestion;
@@ -231,8 +231,8 @@ var flowquest = function(fq) {
 
         if (oAnswers.patterns[sAnswersPattern] && oAnswers.patterns[sAnswersPattern].content) {
             sResultContent = oAnswers.patterns[sAnswersPattern].content;
-            sResultPosition = oAnswers.patterns[sAnswersPattern].position
-                              ? oAnswers.patterns[sAnswersPattern].position
+            sResultPosition = oAnswers.patterns[sAnswersPattern].position 
+                              ? oAnswers.patterns[sAnswersPattern].position 
                               : 'unknown';
         } else {
             sResultContent = 'You are too unique - we have no data that matches your answers.';
@@ -257,7 +257,7 @@ var flowquest = function(fq) {
     }
 
     // DOM stuff
-
+    
     /**
      * Get attribute value
      */
@@ -280,7 +280,7 @@ var flowquest = function(fq) {
         }
         return el;
     }
-
+    
     /**
      * Get element
      * @param   {string}        sel     the selector string
@@ -296,13 +296,13 @@ var flowquest = function(fq) {
     /**
      * Append DOM element with its own features to parent element
      * @param       {object}        args                the arguments object
-     * @property    {DOMElement}    args.elParent       the parent DOM element
-     * @property    {string}        args.newTag         the new HTML tag to be created
-     * @property    {string}        args.newElID        the new ID to be applied to the element being created
-     * @property    {array}         args.newElClasses   the list of classes to be added to the element being created
+     * @property    {DOMElement}    args.elParent       the parent DOM element   
+     * @property    {string}        args.newTag         the new HTML tag to be created  
+     * @property    {string}        args.newElID        the new ID to be applied to the element being created  
+     * @property    {array}         args.newElClasses   the list of classes to be added to the element being created 
      * @property    {array}         args.attribs        the list of attribute object for name and value to be added to the element being created
-     * @property    {string}        args.sText          the text to be added to the DOM node
-     * @return      {DOMElement}                        the newly created DOM element
+     * @property    {string}        args.sText          the text to be added to the DOM node 
+     * @return      {DOMElement}                        the newly created DOM element 
      */
     function _appendChild (args) {
         var elParent       = args.elParent
@@ -341,7 +341,7 @@ var flowquest = function(fq) {
         }
 
         elParent.appendChild(newEl);
-
+        
         return newEl;
     }
 

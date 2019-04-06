@@ -12,10 +12,11 @@ body {
 	margin: 10px 0;
 	width: 100%;
 	text-align: center;
+  flex-direction: column;
 }
 
 .fq-question.fq-active {
-	display: inline-block;
+	display: flex;
 }
 
 .fq-question.fq-inactive {
@@ -29,8 +30,7 @@ body {
 	padding: 3px 6px;
 	margin: 0 0 0 10px;
 	border: 1px solid #fff;
-
-	display: block;
+	display: flex;
 	height: 30px;
 	line-height: 30px;
 	margin: 5px 0;
@@ -42,4 +42,15 @@ body {
 
 #answer-result {
 	padding: 10px;
+}
+
+
+.fq-question > a > span:nth-child(1){
+	width: 10px;
+	border-radius: 10px;
+	background-color: red;
+	align-self: center;
+}
+.fq-question > a > span:nth-child(2){
+	width: calc(100% - 10px);
 }
