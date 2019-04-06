@@ -1,12 +1,17 @@
 body {
 	font-family: Arial;
 }
+#flowquest_container {
+	width: 100%;
+}
 .fq-question {
 	color: #555;
 	border: 1px solid #ccc;
 	background: #efefef;
 	padding: 10px;
 	margin: 10px 0;
+	width: 100%;
+	text-align: center;
 }
 
 .fq-question.fq-active {
