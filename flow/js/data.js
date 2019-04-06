@@ -8,7 +8,7 @@ var fq_colors = {
           "label": "<span>a</span><span>Red</span>",
           "val": "red",
           "classes": "hue-red",
-          "content": "<span>test</span>",
+          "content": "<span>test content</span>",
           "nextQ": 2
         },
         "green": {
