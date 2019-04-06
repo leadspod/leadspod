@@ -190,6 +190,12 @@ var flowquest = function(fq) {
 
         var thisAnswerString = thisQ.innerHTML;
 
+        var content = fq.questions[currentQueston]['options'][thisAnswerData]['content'];
+
+        if(content){
+            document.querySelector('.content').innerHTML = content;
+        }
+
         console.log(fq.questions[currentQueston]['options'][thisAnswerData]);
 
         if (!fq.questions[currentQueston]['options'][thisAnswerData].nextQ) {
