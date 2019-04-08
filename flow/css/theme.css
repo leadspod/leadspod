@@ -43,10 +43,14 @@ body {
 
 
 .fq-question > a > span:nth-child(1){
-	width: 10px;
-	border-radius: 10px;
-	background-color: red;
-	align-self: center;
+	border-radius: 29px;
+	    background-color: red;
+	    align-self: center;
+	    padding: 18px;
+	    padding-bottom: 10px;
+	    padding-top: 10px;
+	    margin-left: -45px;
+	    position: absolute;
 }
 .fq-question > a > span:nth-child(2){
 	width: calc(100% - 10px);
