@@ -12,9 +12,7 @@ body {
 	text-align: center;
   flex-direction: column;
 }
-.fq-question > a {
-	color: #555;
-}
+
 .fq-question.fq-active {
 	display: flex;
 }
@@ -25,13 +23,14 @@ body {
 
 .fq-option {
 	cursor: pointer;
-	color: #fff;
+	color: #000 !important;
 	background: #fff;
 	padding: 20px;
 	border: 1px solid #fff;
 	display: flex;
 	margin: 5px 0;
 	box-sizing: border-box;
+  border-radius: 10px;
 }
 
 .fq-option:hover {
