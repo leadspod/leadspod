@@ -5,16 +5,16 @@ body {
 	width: 100%;
 }
 .fq-question {
-	color: #555;
-	border: 1px solid #ccc;
-	background: #efefef;
+	color: #fff;
 	padding: 10px;
 	margin: 10px 0;
 	width: 100%;
 	text-align: center;
   flex-direction: column;
 }
-
+.fq-question > a {
+	color: #555;
+}
 .fq-question.fq-active {
 	display: flex;
 }
@@ -27,17 +27,15 @@ body {
 	cursor: pointer;
 	color: #fff;
 	background: #fff;
-	padding: 3px 6px;
-	margin: 0 0 0 10px;
+	padding: 20px;
 	border: 1px solid #fff;
 	display: flex;
-	height: 30px;
-	line-height: 30px;
 	margin: 5px 0;
+	box-sizing: border-box;
 }
 
 .fq-option:hover {
-	box-shadow: 0 0 3px 1px #999;
+	_box-shadow: 0 0 3px 1px #999;
 }
 
 #answer-result {
