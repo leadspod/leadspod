@@ -45,6 +45,7 @@ body {
 .fq-question > a > span:nth-child(1){
 	border-radius: 29px;
 	    background-color: red;
+			color:#fff;
 	    align-self: center;
 	    padding: 18px;
 	    padding-bottom: 10px;
