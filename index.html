@@ -100,7 +100,7 @@
 
 			var jqxhr = $.post(url, post_data, function(post_data) {
 							setTimeout(function() {
-											$('#answer-result').before("<h3 class='text-white'>Thanks for registering! We will contact you shortly with a follow-up! <3</h3>");
+											$('#answer-result').before("<h4 class='text-white'>Thanks for registering! We will contact you shortly with a follow-up!</h4>");
 											//window.location.replace('/thank-you.html');
 											$('#answer-result').after( "<p>\r\n\tBy listening to your feedback<br>\r\n\tand focusing on the meaningful<br>\r\n\tengagement, encouragement and support\r\n\t<\/p>\r\n\t<p>\r\n\twe created LeadsPod.\r\n\t<\/p><p>Read our story <a class='text-white big' href='story.html'><strong>here<\/strong></a><\/p>." );
 							}, 500);
