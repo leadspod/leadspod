@@ -5,21 +5,27 @@ var fq_colors = {
       "question": "What do you want to achieve on LinkedIn?",
       "options": {
         "1a": {
-          "label": "<span>a</span><span>I don’t want to look like nobody gives a shit about my stuff</span>",
+          "label": "<span>a</span><span>I want to grow my network</span>",
           "val": "1a",
           "classes": "",
           "content": "",
           "nextQ": 2
         },
         "1b": {
-          "label": "<span>b</span><span>I want to grow my network</span>",
+          "label": "<span>b</span><span>I need feedback on my content</span>",
           "val": "1b",
           "classes": "",
           "nextQ": 2
         },
         "1c": {
-          "label": "<span>c</span><span>I want to target a different network quickly</span>",
+          "label": "<span>c</span><span>I want more visibility</span>",
           "val": "1c",
+          "classes": "",
+          "nextQ": 2
+        },
+        "1d": {
+          "label": "<span>c</span><span>I want to meet other content creators</span>",
+          "val": "1d",
           "classes": "",
           "nextQ": 2
         }
@@ -61,6 +67,10 @@ var fq_colors = {
       "1c|2a|": {
         "position": "1c",
         "content": "1c"
+      },
+      "1d|2a|": {
+        "position": "1d",
+        "content": "1d"
       }
       /* greens */
       ,
@@ -73,6 +83,10 @@ var fq_colors = {
         "content": "2b"
       },
       "1c|2b|": {
+        "position": "2b",
+        "content": "2b"
+      },
+      "1d|2b|": {
         "position": "2b",
         "content": "2b"
       }
