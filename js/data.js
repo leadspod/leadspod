@@ -34,14 +34,14 @@ var fq_colors = {
           "label": "<span>a</span><span>I have a invite code</span>",
           "val": "2a",
           "classes": "",
-          "content": "<input id=\"code\" placeholder=\"code\"></input><button>submit</button>",
+          "content": "<div class=\"input-group mb-3\">\r\n  <input id=\"code\" type=\"text\" class=\"form-control\" placeholder=\"Invite code\">\r\n  <div class=\"input-group-append\">\r\n    <button class=\"btn btn-outline-secondary\" type=\"button\">Button<\/button>\r\n  <\/div>\r\n<\/div>",
           "nextQ": null
         },
         "2b": {
           "label": "<span>b</span><span>With my linkedIn url </span>",
           "val": "2b",
-          "content": "<input id=\"email\" placeholder=\"email\"></input><input id=\"url\" placeholder=\"url\"></input><button>submit</button>",
-          "classes": "",
+          "content": "<div class=\"input-group mb-3\">\r\n  <input id=\"email\" type=\"text\" class=\"form-control\" placeholder=\"Email\">\r\n  <input id=\"url\" type=\"text\" class=\"form-control\" placeholder=\"LinkedIn url\">\r\n <div class=\"input-group-append\">\r\n    <button class=\"btn btn-outline-secondary\" type=\"button\">Button<\/button>\r\n  <\/div>\r\n<\/div>",
+        "classes": "",
           "nextQ": null
         }
       }
