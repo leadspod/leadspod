@@ -1,6 +1,15 @@
 body {
 	font-family: Arial;
 }
+
+h1, h2, h3 {
+	color: #526cfd;
+}
+
+a {
+	color: #526cfd !important;
+}
+
 #flowquest_container {
 	width: 100%;
 }
