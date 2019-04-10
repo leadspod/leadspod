@@ -10,6 +10,14 @@ a {
 	color: #526cfd !important;
 }
 
+a.text-white {
+	color: #ffffff !important;
+}
+
+.big {
+	font-size: 1.2rem !important;
+}
+
 #flowquest_container {
 	width: 100%;
 }

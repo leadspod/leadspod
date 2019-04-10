@@ -101,14 +101,14 @@
 			var jqxhr = $.post(url, post_data, function(post_data) {
 							setTimeout(function() {
 											//window.location.replace('/thank-you.html');
-											$('#answer-result').after( "<p>\r\n\tBy listening to your feedback...<br>\r\n\tBy focusing on the meaningful engagement,<br>\r\n\tencouragement and support...\r\n\t<\/p>\r\n\t<p>\r\n\tWe created LeadsPod.\r\n\t<\/p>" );
+											$('#answer-result').after( "<p>\r\n\tBy listening to your feedback<br>\r\n\tand focusing on the meaningful<br>\r\n\tengagement, encouragement and support\r\n\t<\/p>\r\n\t<p>\r\n\tWe created LeadsPod.\r\n\t<\/p><p>Read our story <a class='text-white big' href='story.html'><strong>here<\/strong></a><\/p>." );
 							}, 500);
 
 			})
 			.fail(function(data) {
 							setTimeout(function() {
 										 //window.location.replace('/error.html');
-										 $('#answer-result').after( "<p>Oeps something went wrong</p>" );
+										 $('#answer-result').after( "<p>Oops, something went wrong! It happens to the best of us...</p>" );
 							}, 500);
 			});
 
