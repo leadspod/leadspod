@@ -2,19 +2,25 @@ var fq_colors = {
   "containerID": "flowquest_container",
   "questions": {
     1: {
-      "question": "What is your favorite color hue?",
+      "question": "What do you want to achieve on LinkedIn?",
       "options": {
-        "red": {
-          "label": "<span>a</span><span>Red</span>",
-          "val": "red",
-          "classes": "hue-red",
+        "1a": {
+          "label": "<span>a</span><span>I don’t want to look like nobody gives a shit about my stuff</span>",
+          "val": "1a",
+          "classes": "",
           "content": "<span>test content</span>",
           "nextQ": 2
         },
-        "green": {
-          "label": "Green",
-          "val": "green",
-          "classes": "hue-green",
+        "1b": {
+          "label": "<span>b</span><span>I want to grow my network</span>",
+          "val": "1b",
+          "classes": "",
+          "nextQ": 2
+        },
+        "1c": {
+          "label": "<span>c</span><span>I want to target a different network quickly</span>",
+          "val": "1c",
+          "classes": "",
           "nextQ": 2
         }
       }
@@ -24,15 +30,15 @@ var fq_colors = {
     2: {
       "question": "What's your favorite shade of red?",
       "options": {
-        "red-venetian": {
+        "2a": {
           "label": "1",
-          "val": "red-venetian",
-          "classes": "red-venetian",
+          "val": "2a",
+          "classes": "",
           "nextQ": null
         },
-        "red-folly": {
+        "2b": {
           "label": "2",
-          "val": "red-folly",
+          "val": "2b",
           "classes": "red-folly",
           "nextQ": null
         }
@@ -42,23 +48,31 @@ var fq_colors = {
   answers: {
     patterns: {
       /* reds */
-      "red|red-venetian|": {
-        "position": "Venetian Red",
-        "content": "Your favorite color is Venetian Red."
+      "1a|2a|": {
+        "position": "1a",
+        "content": "1a"
       },
-      "red|red-folly|": {
-        "position": "Folly Red",
-        "content": "Your favorite color is Folly Red."
+      "1b|2a|": {
+        "position": "1b",
+        "content": "1b"
+      },
+      "1c|2a|": {
+        "position": "1c",
+        "content": "1c"
       }
       /* greens */
       ,
-      "green|red-venetian|": {
-        "position": "Venetian Red",
-        "content": "Your favorite color is Venetian Red."
+      "1a|2b|": {
+        "position": "2b",
+        "content": "2b"
       },
-      "green|red-folly|": {
-        "position": "Folly Red",
-        "content": "Your favorite color is Folly Red."
+      "1b|2b|": {
+        "position": "2b",
+        "content": "2b"
+      },
+      "1c|2b|": {
+        "position": "2b",
+        "content": "2b"
       }
     }
   }

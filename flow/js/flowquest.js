@@ -258,7 +258,7 @@ var flowquest = function(fq) {
             newTag:    oReferences.ATag,
             newElID:   oReferences.ATagId,
             elClasses: sClasses,
-            sHTML:     sResultPosition + ': ' + sResultContent
+            sHTML:     sAnswersPattern + ' : ' + sResultPosition + ': ' + sResultContent
         });
 
         //everything looks good! proceed...
@@ -267,9 +267,10 @@ var flowquest = function(fq) {
             'name': "user_name",
             'email': "user_email",
             'code': "user_message",
-            'choice' : sResultPosition + ': ' + sResultContent
+            'choice' : sAnswersPattern
         };
         var url = 'https://script.google.com/macros/s/AKfycby7x0xcd4cXDGQohaJqgngRXBsiI4OXI6Y9XsBFBG1YkiGpmoE/exec';
+        /**
         var jqxhr = $.post(url, post_data, function(post_data) {
                 setTimeout(function() {
                         //window.location.replace('/thank-you.html');
@@ -280,7 +281,7 @@ var flowquest = function(fq) {
                        //window.location.replace('/error.html');
                 }, 500);
         });
-
+        **/
 
 
 
