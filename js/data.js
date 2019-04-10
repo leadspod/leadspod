@@ -24,7 +24,7 @@ var fq_colors = {
           "nextQ": 2
         },
         "1d": {
-          "label": "<span>c</span><span>I want to meet other content creators</span>",
+          "label": "<span>d</span><span>I want to meet other content creators</span>",
           "val": "1d",
           "classes": "",
           "nextQ": 2
