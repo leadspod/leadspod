@@ -56,15 +56,7 @@
 		<div class="col-md-6 p-0 bg-left h-md-100">
 			<div class="text-black d-md-flex align-items-center h-100 p-5 text-center justify-content-center">
 				<div class="content pt-5 pb-5">
-					<p>Because beginnings are hard and it’s tough to grow on your own.</p>
-				<p>
-					By listening to your feedback...<br>
-					By focusing on the meaningful engagement,<br>
-					encouragement and support...
-				</p>
-				<p>
-					We created LeadsPod.
-				</p>
+					<p>Because growing online is better done together.</p>
 				</div>
 			</div>
 		</div>
@@ -109,7 +101,7 @@
 			var jqxhr = $.post(url, post_data, function(post_data) {
 							setTimeout(function() {
 											//window.location.replace('/thank-you.html');
-											$('#answer-result').after( "<p>Thank you</p>" );
+											$('#answer-result').after( "<p>\r\n\tBy listening to your feedback...<br>\r\n\tBy focusing on the meaningful engagement,<br>\r\n\tencouragement and support...\r\n\t<\/p>\r\n\t<p>\r\n\tWe created LeadsPod.\r\n\t<\/p>" );
 							}, 500);
 
 			})
