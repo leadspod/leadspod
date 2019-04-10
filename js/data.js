@@ -30,8 +30,8 @@ var fq_colors = {
           "nextQ": 2
         },
         "1e": {
-          "label": "<span>d</span><span>I need someone to motivate me to create content</span>",
-          "val": "1d",
+          "label": "<span>e</span><span>I need someone to motivate me to create content</span>",
+          "val": "1e",
           "classes": "",
           "nextQ": 2
         }
