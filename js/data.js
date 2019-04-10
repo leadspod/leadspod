@@ -77,6 +77,10 @@ var fq_colors = {
       "1d|2a|": {
         "position": "1d",
         "content": "1d"
+      },
+      "1e|2a|": {
+        "position": "1d",
+        "content": "1d"
       }
       /* greens */
       ,
@@ -93,6 +97,10 @@ var fq_colors = {
         "content": "2b"
       },
       "1d|2b|": {
+        "position": "2b",
+        "content": "2b"
+      },
+      "1e|2b|": {
         "position": "2b",
         "content": "2b"
       }
