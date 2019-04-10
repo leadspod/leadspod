@@ -8,7 +8,7 @@ var fq_colors = {
           "label": "<span>a</span><span>I don’t want to look like nobody gives a shit about my stuff</span>",
           "val": "1a",
           "classes": "",
-          "content": "<span>test content</span>",
+          "content": "",
           "nextQ": 2
         },
         "1b": {
