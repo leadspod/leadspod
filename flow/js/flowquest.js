@@ -63,7 +63,7 @@ var flowquest = function(fq) {
          * @return {void}               nothing
          */
         , _start = function (data) {
-            console.log('starting...');
+            //console.log('starting...');
             _buildQuestion(currentQueston);
 
             if (bUsePushState) {
@@ -72,7 +72,7 @@ var flowquest = function(fq) {
                         oQuestion = e.state
                     ;
                     // e.state is equal to the data-attribute of the last image we clicked
-                    console.log(oQuestion);
+                    //console.log(oQuestion);
                     _buildQuestion(oQuestion.qid);
                 });
             }
@@ -196,7 +196,7 @@ var flowquest = function(fq) {
             document.querySelector('.content').innerHTML = content;
         }
 
-        console.log(fq.questions[currentQueston]['options'][thisAnswerData]);
+        //console.log(fq.questions[currentQueston]['options'][thisAnswerData]);
 
         if (!fq.questions[currentQueston]['options'][thisAnswerData].nextQ) {
             return _endAllQuestions();
@@ -233,7 +233,7 @@ var flowquest = function(fq) {
             }
         }
 
-        console.log(sAnswersPattern,oAnswers.patterns[sAnswersPattern]);
+        //console.log(sAnswersPattern,oAnswers.patterns[sAnswersPattern]);
 
         if (oAnswers.patterns[sAnswersPattern] && oAnswers.patterns[sAnswersPattern].content) {
             sResultContent = oAnswers.patterns[sAnswersPattern].content;
@@ -245,9 +245,9 @@ var flowquest = function(fq) {
             sResultPosition = 'unknown';
         }
 
-        console.log('Flowquest finished! Results:');
-        console.log(sAnswersPattern);
-        console.log(sResultPosition,sResultContent);
+        //console.log('Flowquest finished! Results:');
+        //console.log(sAnswersPattern);
+        //console.log(sResultPosition,sResultContent);
 
         // if there are custom classes used in answer...
         sClasses = oAnswers.patterns[sAnswersPattern].classes || '';
@@ -270,7 +270,7 @@ var flowquest = function(fq) {
      */
     function _getAttr(el, attr) {
         if (!el || !attr) {
-            return console.log('No element or attribute specified!');
+            return //console.log('No element or attribute specified!');
         }
         return el.getAttribute(attr);
     }
@@ -295,7 +295,7 @@ var flowquest = function(fq) {
      */
     function _getEl(sel) {
         if (!sel || !document.querySelectorAll(sel)) {
-            return console.log('no selector');
+            return //console.log('no selector');
         }
         return document.getElementById(sel);
     }
