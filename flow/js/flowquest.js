@@ -261,30 +261,6 @@ var flowquest = function(fq) {
             sHTML:     sAnswersPattern + ' : ' + sResultPosition + ': ' + sResultContent
         });
 
-        //everything looks good! proceed...
-        //data to be sent to server
-        var post_data = {
-            'name': "user_name",
-            'email': "user_email",
-            'code': "user_message",
-            'choice' : sAnswersPattern
-        };
-        var url = 'https://script.google.com/macros/s/AKfycby7x0xcd4cXDGQohaJqgngRXBsiI4OXI6Y9XsBFBG1YkiGpmoE/exec';
-        /**
-        var jqxhr = $.post(url, post_data, function(post_data) {
-                setTimeout(function() {
-                        //window.location.replace('/thank-you.html');
-                }, 500);
-        })
-        .fail(function(data) {
-                setTimeout(function() {
-                       //window.location.replace('/error.html');
-                }, 500);
-        });
-        **/
-
-
-
     }
 
     // DOM stuff

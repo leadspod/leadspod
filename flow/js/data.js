@@ -34,13 +34,13 @@ var fq_colors = {
           "label": "<span>a</span><span>I have a invite code</span>",
           "val": "2a",
           "classes": "",
-          "content": "<input placeholder=\"code\"></input>",
+          "content": "<input placeholder=\"code\"></input><button>submit</button>",
           "nextQ": null
         },
         "2b": {
           "label": "<span>b</span><span>With my linkedIn url </span>",
           "val": "2b",
-          "content": "<input placeholder=\"url\"></input>",
+          "content": "<input placeholder=\"url\"></input><button>submit</button>",
           "classes": "",
           "nextQ": null
         }
