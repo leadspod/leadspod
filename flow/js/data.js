@@ -28,18 +28,20 @@ var fq_colors = {
     /* RED */
     ,
     2: {
-      "question": "What's your favorite shade of red?",
+      "question": "Sign up",
       "options": {
         "2a": {
-          "label": "1",
+          "label": "<span>a</span><span>I have a invite code</span>",
           "val": "2a",
           "classes": "",
+          "content": "<input placeholder=\"code\"></input>",
           "nextQ": null
         },
         "2b": {
-          "label": "2",
+          "label": "<span>b</span><span>With my linkedIn url </span>",
           "val": "2b",
-          "classes": "red-folly",
+          "content": "<input placeholder=\"url\"></input>",
+          "classes": "",
           "nextQ": null
         }
       }
