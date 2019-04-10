@@ -2,25 +2,19 @@ var fq_colors = {
   "containerID": "flowquest_container",
   "questions": {
     1: {
-      "question": "What do you want to achieve on LinkedIn?",
+      "question": "What is your favorite color hue?",
       "options": {
         "red": {
-          "label": "<span>a</span><span>I don’t want to look like nobody gives a shit about my stuff</span>",
+          "label": "<span>a</span><span>Red</span>",
           "val": "red",
           "classes": "hue-red",
           "content": "<span>test content</span>",
           "nextQ": 2
         },
         "green": {
-          "label": "<span>b</span><span>I want to grow my network</span>",
+          "label": "Green",
           "val": "green",
           "classes": "hue-green",
-          "nextQ": 2
-        },
-        "blue": {
-          "label": "<span>c</span><span>I want to target a different network quickly</span>",
-          "val": "blue",
-          "classes": "hue-blue",
           "nextQ": 2
         }
       }
@@ -28,20 +22,18 @@ var fq_colors = {
     /* RED */
     ,
     2: {
-      "question": "I want to sign up",
+      "question": "What's your favorite shade of red?",
       "options": {
         "red-venetian": {
-          "label": "<span>a</span><span>With a Invite code</span>",
+          "label": "1",
           "val": "red-venetian",
           "classes": "red-venetian",
-          "content": "<input placeholder=\"code\"></input>",
           "nextQ": null
         },
         "red-folly": {
-          "label": "<span>b</span><span>With my LinkedIn account</span>",
+          "label": "2",
           "val": "red-folly",
           "classes": "red-folly",
-          "content": "<input placeholder=\"LinkedIn url\"></input>",
           "nextQ": null
         }
       }
@@ -57,20 +49,16 @@ var fq_colors = {
       "red|red-folly|": {
         "position": "Folly Red",
         "content": "Your favorite color is Folly Red."
-      },
-      "red|red-scarlet|": {
-        "position": "Scarlet Red",
-        "content": "Your favorite color is Scarlet Red."
       }
       /* greens */
       ,
-      "green|green-lawn|": {
-        "position": "Lawn Green",
-        "content": "Your favorite color is Lawn Green."
+      "green|red-venetian|": {
+        "position": "Venetian Red",
+        "content": "Your favorite color is Venetian Red."
       },
-      "green|green-brunswick|": {
-        "position": "Brunswick Green",
-        "content": "Your favorite color is Brunswick Green."
+      "green|red-folly|": {
+        "position": "Folly Red",
+        "content": "Your favorite color is Folly Red."
       }
     }
   }
