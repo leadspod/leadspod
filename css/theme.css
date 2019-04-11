@@ -22,13 +22,26 @@ a {
 	width: 100%;
 }
 
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+	.left-side {
+
+	}
+
+	.right-side {
+		animation-delay: 2s;
+	}
+}
+
+
 .fq-question {
 	color: #fff;
 	padding: 25px;
 	margin: 10px 0;
 	width: 100%;
-	text-align: center;
-  flex-direction: column;
+	text-align: left;
+ 	flex-direction: column;
 }
 
 .fq-question.fq-active {
@@ -41,7 +54,7 @@ a {
 
 .fq-option {
 	cursor: pointer;
-	padding: 25px 20px;
+	padding: 25px 15px;
 	border: 1px solid transparent;
 	display: flex;
 	box-sizing: border-box;
@@ -66,6 +79,10 @@ a {
     transition-timing-function: cubic-bezier(0.15,0.51,0.29,1);
     transition-property: background-color,box-shadow,color,-webkit-transform;
     transition-property: background-color,box-shadow,color,transform;
+}
+
+.fq-option span.option-value {
+	padding-left: 55px;
 }
 
 .fq-option:hover span.option {

@@ -5,32 +5,32 @@ var fq_colors = {
       "question": "What do you want to achieve on LinkedIn?",
       "options": {
         "1a": {
-          "label": "<span class='option'>a</span><span>I want to grow my network</span>",
+          "label": "<span class='option'>a</span><span class='option-value'>I want to grow my network</span>",
           "val": "1a",
           "classes": "",
           "content": "",
           "nextQ": 2
         },
         "1b": {
-          "label": "<span class='option'>b</span><span>I need feedback on my content</span>",
+          "label": "<span class='option'>b</span><span class='option-value'>I need feedback on my content</span>",
           "val": "1b",
           "classes": "",
           "nextQ": 2
         },
         "1c": {
-          "label": "<span class='option'>c</span><span>I want more visibility</span>",
+          "label": "<span class='option'>c</span><span class='option-value'>I want more visibility</span>",
           "val": "1c",
           "classes": "",
           "nextQ": 2
         },
         "1d": {
-          "label": "<span class='option'>d</span><span>I want to meet other content creators</span>",
+          "label": "<span class='option'>d</span><span class='option-value'>I want to meet other content creators</span>",
           "val": "1d",
           "classes": "",
           "nextQ": 2
         },
         "1e": {
-          "label": "<span class='option'>e</span><span>I need someone to motivate me to create content</span>",
+          "label": "<span class='option'>e</span><span class='option-value'>I need someone to motivate me to create content</span>",
           "val": "1e",
           "classes": "",
           "nextQ": 2
@@ -43,14 +43,14 @@ var fq_colors = {
       "question": "Sign up",
       "options": {
         "2a": {
-          "label": "<span class='option'>a</span><span>With my invite code</span>",
+          "label": "<span class='option'>a</span><span class='option-value'>With my invite code</span>",
           "val": "2a",
           "classes": "",
           "content": "<div class=\"input-group mb-3\">\r\n <input id=\"email\" type=\"text\" class=\"form-control\" placeholder=\"Email\">\r\n <input id=\"code\" type=\"text\" class=\"form-control\" placeholder=\"Invite code\">\r\n  <div class=\"input-group-append\">\r\n    <button class=\"btn btn-outline-secondary\" type=\"button\">Submit<\/button>\r\n  <\/div>\r\n<\/div>",
           "nextQ": null
         },
         "2b": {
-          "label": "<span class='option'>b</span><span>With my linkedIn url </span>",
+          "label": "<span class='option'>b</span><span class='option-value'>With my linkedIn url </span>",
           "val": "2b",
           "content": "<div class=\"input-group mb-3\">\r\n  <input id=\"email\" type=\"text\" class=\"form-control\" placeholder=\"Email\">\r\n  <input id=\"url\" type=\"text\" class=\"form-control\" placeholder=\"LinkedIn url\">\r\n <div class=\"input-group-append\">\r\n    <button class=\"btn btn-outline-secondary\" type=\"button\">Submit<\/button>\r\n  <\/div>\r\n<\/div>",
         "classes": "",
