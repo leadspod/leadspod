@@ -1,5 +1,6 @@
 body {
 	font-family: Arial;
+  	background-color: #526cfd;
 }
 
 .bg-right {
@@ -54,8 +55,8 @@ a {
 
 	}
 
-	.right-side {
-		animation-delay: 2s;
+	.right-side .content {
+		animation-delay: 1s;
 	}
 }
 
