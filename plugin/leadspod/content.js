@@ -23,6 +23,8 @@ var isInPostIds = function(id){
 var getDeleteButton = function () {
   var button = document.createElement("button");
   button.innerHTML = "Delete";
+  button.style.position = "absolute";
+  button.style.marginTop = "-21px";
   button.classList.add("delete-button");
   button.addEventListener("click", function () {
     var post = this.parentElement;
@@ -62,7 +64,9 @@ var start = function (request, sender, sendResponse) {
       var button = element.getElementsByClassName("delete-button");
       if(button.length == 0) {
         var deleteButton = getDeleteButton();
-        element.appendChild(deleteButton);
+        //element.appendChild(deleteButton);
+        //eElement.insertBefore(newFirstElement, eElement.firstChild);
+        element.insertBefore(deleteButton, element.firstChild);
         element.style.border = "thick solid red";
         window.startRunning = false;
       }
