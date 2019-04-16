@@ -6,7 +6,8 @@ var getDeleteButton = function () {
   button.classList.add("delete-button");
   button.addEventListener("click", function () {
     var post = this.parentElement;
-    window.postIds.push(post.parentElement.getAttribute('data-id'));
+    var id = post.parentElement.getAttribute('data-id');
+    window.postIds.push(id);
     post.remove();
     window.scrollTo({
       top: 0,
@@ -36,9 +37,8 @@ var start = function (request, sender, sendResponse) {
     var targetDiv = element.getElementsByClassName("feed-shared-update-v2__description")[0];
     var re = new RegExp(request, 'gi')
     var matches = targetDiv.innerText.match(re)
-    // && window.postIds.indexOf(element.getAttribute('data-id')) == -1
     var id = element.parentElement.getAttribute('data-id');
-    if(matches && matches.length > 0) {
+    if(matches && matches.length > 0 && window.postIds.indexOf(id) == -1) {
       var button = element.getElementsByClassName("delete-button");
       if(button.length == 0) {
         var deleteButton = getDeleteButton();
