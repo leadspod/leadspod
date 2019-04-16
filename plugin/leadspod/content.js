@@ -79,7 +79,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       if(window.startRunning) {
         start(request, sender, sendResponse);
       }
-    }, 3000);
+    }, 5000);
     window.startRunning = true;
   }
 })
