@@ -1,4 +1,23 @@
-window.postIds = [];
+
+
+var getPostIds = function(){
+  var postIds = localStorage.getItem("postids");
+  if(postIds == null){
+    postIds = [];
+  }
+  return postIds;
+}
+
+var addToPostIds = function(id){
+    var postIds = getPostIds();
+    postIds.push(id);
+    localStorage.setItem("postids", postIds);
+}
+
+var isInPostIds = function(id){
+    if(getPostIds().indexOf(id) == -1)return false;
+    return true;
+}
 
 var getDeleteButton = function () {
   var button = document.createElement("button");
@@ -7,7 +26,7 @@ var getDeleteButton = function () {
   button.addEventListener("click", function () {
     var post = this.parentElement;
     var id = post.parentElement.getAttribute('data-id');
-    window.postIds.push(id);
+    addToPostIds(id);
     post.remove();
     window.scrollTo({
       top: 0,
@@ -38,7 +57,7 @@ var start = function (request, sender, sendResponse) {
     var re = new RegExp(request, 'gi')
     var matches = targetDiv.innerText.match(re)
     var id = element.parentElement.getAttribute('data-id');
-    if(matches && matches.length > 0 && window.postIds.indexOf(id) == -1) {
+    if(matches && matches.length > 0 && isInPostIds(id)) {
       var button = element.getElementsByClassName("delete-button");
       if(button.length == 0) {
         var deleteButton = getDeleteButton();
