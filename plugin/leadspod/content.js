@@ -13,10 +13,14 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     //var targetDiv = element.getElementsByClassName("feed-shared-update-v2__description")[0];
     console.log(element.innerText);
 
-    const re = new RegExp('Promoted', 'gi')
-    const matches = element.innerText.match(re)
+    var re = new RegExp(request, 'gi')
+    var matches = element.innerText.match(re)
     if(matches && matches.length > 0){
+
+    }else{
       element.remove();
+      window.scrollBy(0, 100);
+      window.scrollBy(0, -100);
     }
 
 
