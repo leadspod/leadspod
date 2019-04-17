@@ -1,25 +1,20 @@
-
-
-var getPostIds = function(){
+var getPostIds = function () {
   var postIds = JSON.parse(localStorage.getItem("postids"));
-  if(postIds == null || postIds == ""){
+  if(postIds == null || postIds == "") {
     postIds = [];
   }
   return postIds;
 }
-
-var addToPostIds = function(id){
-    var postIds = getPostIds();
-    postIds.push(id);
-    localStorage.setItem("postids", JSON.stringify(postIds));
+var addToPostIds = function (id) {
+  var postIds = getPostIds();
+  postIds.push(id);
+  localStorage.setItem("postids", JSON.stringify(postIds));
 }
-
-var isInPostIds = function(id){
-    var postIds = getPostIds();
-    if(postIds.indexOf(id) == -1)return false;
-    return true;
+var isInPostIds = function (id) {
+  var postIds = getPostIds();
+  if(postIds.indexOf(id) == -1) return false;
+  return true;
 }
-
 var getDeleteButton = function () {
   var button = document.createElement("button");
   button.innerHTML = "Delete";
@@ -53,28 +48,27 @@ var start = function (request, sender, sendResponse) {
     shake();
     setTimeout(function () {
       start(request, sender, sendResponse);
-    }, 3000);
-  }
-  posts.forEach(function (element) {
-    var targetDiv = element.getElementsByClassName("feed-shared-update-v2__description")[0];
-    var re = new RegExp(request, 'gi')
-    var matches = targetDiv.innerText.match(re)
-    var id = element.parentElement.getAttribute('data-id');
-    if(matches && matches.length > 0 && !isInPostIds(id)) {
-      var button = element.getElementsByClassName("delete-button");
-      if(button.length == 0) {
-        var deleteButton = getDeleteButton();
-        //element.appendChild(deleteButton);
-        //eElement.insertBefore(newFirstElement, eElement.firstChild);
-        element.insertBefore(deleteButton, element.firstChild);
-        element.style.border = "thick solid red";
-        window.startRunning = false;
+    }, 2000);
+  } else {
+    posts.forEach(function (element) {
+      var targetDiv = element.getElementsByClassName("feed-shared-update-v2__description")[0];
+      var re = new RegExp(request, 'gi')
+      var matches = targetDiv.innerText.match(re)
+      var id = element.parentElement.getAttribute('data-id');
+      if(matches && matches.length > 0 && !isInPostIds(id)) {
+        var button = element.getElementsByClassName("delete-button");
+        if(button.length == 0) {
+          var deleteButton = getDeleteButton();
+          element.insertBefore(deleteButton, element.firstChild);
+          element.style.border = "thick solid red";
+          window.startRunning = false;
+        }
+      } else {
+        element.remove();
+        //shake();
       }
-    } else {
-      element.remove();
-      shake();
-    }
-  });
+    });
+  }
 }
 window.startRunning = false;
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
@@ -83,7 +77,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       if(window.startRunning) {
         start(request, sender, sendResponse);
       }
-    }, 5000);
+    }, 2000);
     window.startRunning = true;
   }
 })

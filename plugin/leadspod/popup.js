@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-
   chrome.storage.local.get(['key'], function (result) {
-    console.log('Value currently is ' + result.key);
     if(result.key) {
       document.querySelector('#keyword')
         .value = result.key;
@@ -23,5 +21,4 @@ document.addEventListener('DOMContentLoaded', function () {
       }, function () {});
     })
   }
-
 }, false)
