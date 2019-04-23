@@ -33,6 +33,7 @@ var fq_colors = {
           "label": "<span class='option'>c</span><span class='option-value'>[ Other ]</span>",
           "val": "1e",
           "classes": "",
+          "content": "<div class=\"input-group mb-3\">\r\n <input id=\"other\" type=\"text\" class=\"form-control\" placeholder=\"Other\">\r\n <div class=\"input-group-append\">\r\n    <button id=\"other-btn\" class=\"btn btn-outline-secondary\" type=\"button\">Submit<\/button>\r\n  <\/div>\r\n<\/div>",
           "nextQ": 2
         }
       }
