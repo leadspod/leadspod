@@ -151,44 +151,44 @@ var fq_colors = {
         "position": "default",
         "content": "default"
       },
-      "4a|5a|": {
+      "!4a|5a|": {
         "position": "4a",
         "content": "4a"
       },
-      "4b|5a|": {
+      "!4b|5a|": {
         "position": "4b",
         "content": "4b"
       },
-      "4c|5a|": {
+      "!4c|5a|": {
         "position": "4c",
         "content": "4c"
       },
-      "4d|5a|": {
+      "!4d|5a|": {
         "position": "4d",
         "content": "4d"
       },
-      "4e|5a|": {
+      "!4e|5a|": {
         "position": "4d",
         "content": "4d"
       }
       ,
-      "4a|5b|": {
+      "!4a|5b|": {
         "position": "5b",
         "content": "5b"
       },
-      "4b|5b|": {
+      "!4b|5b|": {
         "position": "5b",
         "content": "5b"
       },
-      "4c|5b|": {
+      "!4c|5b|": {
         "position": "5b",
         "content": "5b"
       },
-      "4d|5b|": {
+      "!4d|5b|": {
         "position": "5b",
         "content": "5b"
       },
-      "4e|5b|": {
+      "!4e|5b|": {
         "position": "5b",
         "content": "5b"
       }
