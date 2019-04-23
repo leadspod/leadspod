@@ -45,7 +45,7 @@ var start = function (request, sender, sendResponse) {
           console.log("Nr of posts : " + counter.posts);
           console.log("Nr of likes : " + counter.likes);
           console.log("Nr of comments : " + counter.comments);
-          alert("Nr of posts : " + counter.posts + "" + "Nr of likes : " + counter.likes +"" + "Nr of comments : " + counter.comments +"");
+          alert("posts : " + counter.posts + " " + "likes : " + counter.likes +" " + "comments : " + counter.comments +"");
         }
         window.startRunning = false;
       } else {
