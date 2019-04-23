@@ -1,7 +1,7 @@
 {
-  "name": "LeadsPod",
-  "short_name": "LeadsPod",
-  "version": "1.0",
+  "name": "LeadsPod filters your LinkedIn Feed",
+  "short_name": "LeadsPod filters your LinkedIn Feed",
+  "version": "1.01",
   "manifest_version": 2,
   "content_scripts": [
     {

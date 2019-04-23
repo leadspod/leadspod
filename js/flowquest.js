@@ -250,6 +250,11 @@ var flowquest = function(fq) {
         //console.log(sResultPosition,sResultContent);
 
         // if there are custom classes used in answer...
+        sAnswersPatternOrg = sAnswersPattern;
+        if(!oAnswers.patterns.hasOwnProperty(sAnswersPattern)){
+          sAnswersPattern = "default";
+        }
+
         sClasses = oAnswers.patterns[sAnswersPattern].classes || '';
 
         // add answer to DOM
@@ -258,7 +263,7 @@ var flowquest = function(fq) {
             newTag:    oReferences.ATag,
             newElID:   oReferences.ATagId,
             elClasses: sClasses,
-            sHTML:     sAnswersPattern + ' : ' + sResultPosition + ': ' + sResultContent
+            sHTML:     sAnswersPatternOrg + ' : ' + sResultPosition + ': ' + sResultContent
         });
 
     }
