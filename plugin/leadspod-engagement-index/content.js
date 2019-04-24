@@ -26,29 +26,29 @@ var start = function (request, sender, sendResponse) {
       window.startRunning = true;
     }, 2000);
   } else {
-      posts.forEach(function (element) {
-        var timePeriodDiv = element.getElementsByClassName("feed-shared-actor__sub-description")[0];
-        console.log(timePeriodDiv.innerText);
-        var socialCounts = element.getElementsByClassName('feed-shared-social-counts')[0];
-        if(socialCounts) {
-          for(var i = 0; i < socialCounts.children.length; i++) {
-            counter.likes = counter.likes + getSocialCounts(socialCounts.children[i], 'likes');
-            counter.comments = counter.comments + getSocialCounts(socialCounts.children[i], 'comments');
-          }
+    posts.forEach(function (element) {
+      var timePeriodDiv = element.getElementsByClassName("feed-shared-actor__sub-description")[0];
+      console.log(timePeriodDiv.innerText);
+      var socialCounts = element.getElementsByClassName('feed-shared-social-counts')[0];
+      if(socialCounts) {
+        for(var i = 0; i < socialCounts.children.length; i++) {
+          counter.likes = counter.likes + getSocialCounts(socialCounts.children[i], 'likes');
+          counter.comments = counter.comments + getSocialCounts(socialCounts.children[i], 'comments');
         }
-        var re = new RegExp(request, 'gi')
-        var matches = timePeriodDiv.innerText.match(re)
-        if(matches && matches.length > 0) {
-          if(window.startRunning) {
-            window.startRunning = false;
-            alert("posts : " + counter.posts +"\n"+ "likes : " + counter.likes +"\n"+ "comments : " + counter.comments + "");
-            location.reload();
-          }
-        } else {
-          element.remove();
-          counter.posts++;
+      }
+      var re = new RegExp(request, 'gi')
+      var matches = timePeriodDiv.innerText.match(re)
+      if(matches && matches.length > 0) {
+        if(window.startRunning) {
+          window.startRunning = false;
+          alert("posts : " + counter.posts + "\n" + "likes : " + counter.likes + "\n" + "comments : " + counter.comments + "");
+          location.reload();
         }
-      });
+      } else {
+        element.remove();
+        counter.posts++;
+      }
+    });
   }
 }
 window.startRunning = false;
@@ -62,3 +62,13 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     window.startRunning = true;
   }
 })
+var connectButton = document.getElementsByClassName("pv-s-profile-actions")[0];
+if(connectButton) {
+  console.log(location);
+  var newlink = document.createElement('a');
+  var linkText = document.createTextNode("POSTS");
+  newlink.appendChild(linkText);
+  newlink.setAttribute('href', location.href + 'detail/recent-activity/shares/');
+  connectButton.parentNode.parentNode.appendChild(newlink);
+  console.log(newlink);
+}
