@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .value = result.key;
     }
   });
-  document.querySelector('button')
+  document.querySelector('#start-btn')
     .addEventListener('click', onclick, false)
 
   function onclick() {
