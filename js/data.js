@@ -24,19 +24,19 @@ var fq_colors = {
           "nextQ": 2
         },
         "1d": {
-          "label": "<span class='option'>c</span><span class='option-value'>Marketing</span>",
+          "label": "<span class='option'>d</span><span class='option-value'>Marketing</span>",
           "val": "1d",
           "classes": "",
           "nextQ": 2
         },
         "1e": {
-          "label": "<span class='option'>c</span><span class='option-value'>Travel</span>",
+          "label": "<span class='option'>e</span><span class='option-value'>Travel</span>",
           "val": "1e",
           "classes": "",
           "nextQ": 2
         },
         "1f": {
-          "label": "<span class='option'>c</span><span class='option-value'>[ Other ]</span>",
+          "label": "<span class='option'>f</span><span class='option-value'>[ Other ]</span>",
           "val": "1f",
           "classes": "",
           "content": "<div class=\"input-group mb-3\">\r\n <input id=\"other\" type=\"text\" class=\"form-control\" placeholder=\"Other\">\r\n <div class=\"input-group-append\">\r\n    <button id=\"other-btn\" class=\"btn btn-outline-secondary\" type=\"button\">Submit<\/button>\r\n  <\/div>\r\n<\/div>",
