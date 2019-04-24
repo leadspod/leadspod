@@ -30,15 +30,20 @@ var fq_colors = {
           "nextQ": 2
         },
         "1e": {
-          "label": "<span class='option'>c</span><span class='option-value'>[ Other ]</span>",
+          "label": "<span class='option'>c</span><span class='option-value'>Travel</span>",
           "val": "1e",
+          "classes": "",
+          "nextQ": 2
+        },
+        "1f": {
+          "label": "<span class='option'>c</span><span class='option-value'>[ Other ]</span>",
+          "val": "1f",
           "classes": "",
           "content": "<div class=\"input-group mb-3\">\r\n <input id=\"other\" type=\"text\" class=\"form-control\" placeholder=\"Other\">\r\n <div class=\"input-group-append\">\r\n    <button id=\"other-btn\" class=\"btn btn-outline-secondary\" type=\"button\">Submit<\/button>\r\n  <\/div>\r\n<\/div>",
           "nextQ": 2
         }
       }
-    }
-    ,
+    },
     2: {
       "question": "How often do you engage / post content on LinkedIn? ",
       "options": {
@@ -62,8 +67,7 @@ var fq_colors = {
           "nextQ": 3
         }
       }
-    }
-    ,
+    },
     3: {
       "question": "What’s your number of followers on LinkedIn?",
       "options": {
@@ -87,8 +91,7 @@ var fq_colors = {
           "nextQ": 4
         }
       }
-    }
-    ,
+    },
     4: {
       "question": "What do you want to achieve on LinkedIn?",
       "options": {
@@ -124,8 +127,7 @@ var fq_colors = {
           "nextQ": 5
         }
       }
-    }
-    ,
+    },
     5: {
       "question": "Sign up",
       "options": {
@@ -140,7 +142,7 @@ var fq_colors = {
           "label": "<span class='option'>b</span><span class='option-value'>With my linkedIn url </span>",
           "val": "5b",
           "content": "<div class=\"input-group mb-3\">\r\n  <input id=\"email\" type=\"text\" class=\"form-control\" placeholder=\"Email\">\r\n  <input id=\"url\" type=\"text\" class=\"form-control\" placeholder=\"LinkedIn url\">\r\n <div class=\"input-group-append\">\r\n    <button class=\"btn btn-outline-secondary\" type=\"button\">Submit<\/button>\r\n  <\/div>\r\n<\/div>",
-        "classes": "",
+          "classes": "",
           "nextQ": null
         }
       }
@@ -171,8 +173,7 @@ var fq_colors = {
       "!4e|5a|": {
         "position": "4d",
         "content": "4d"
-      }
-      ,
+      },
       "!4a|5b|": {
         "position": "5b",
         "content": "5b"
