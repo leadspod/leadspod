@@ -5,8 +5,6 @@ var counter = {
 }
 var shake = function () {
   window.scrollTo(0, document.body.scrollHeight);
-  window.scrollBy(0, 100);
-  window.scrollBy(0, -100);
 }
 var getSocialCounts = function (child, kind) {
   var re = new RegExp(kind, 'gi')
@@ -27,27 +25,22 @@ var start = function (request, sender, sendResponse) {
     }, 2000);
   } else {
     posts.forEach(function (element) {
+      if(!window.startRunning)return;
       var timePeriodDiv = element.getElementsByClassName("feed-shared-actor__sub-description")[0];
       console.log(timePeriodDiv.innerText);
       var socialCounts = element.getElementsByClassName('feed-shared-social-counts')[0];
-      if(socialCounts){
+      if(socialCounts) {
         for(var i = 0; i < socialCounts.children.length; i++) {
-          var child = socialCounts.children[i];
-          console.log(child);
-          counter.likes = counter.likes + getSocialCounts(child, 'likes');
-          counter.comments = counter.comments + getSocialCounts(child, 'comments');
+          counter.likes = counter.likes + getSocialCounts(socialCounts.children[i], 'likes');
+          counter.comments = counter.comments + getSocialCounts(socialCounts.children[i], 'comments');
         }
       }
       var re = new RegExp(request, 'gi')
       var matches = timePeriodDiv.innerText.match(re)
       if(matches && matches.length > 0) {
-        if(window.startRunning){
-          console.log("Nr of posts : " + counter.posts);
-          console.log("Nr of likes : " + counter.likes);
-          console.log("Nr of comments : " + counter.comments);
-          alert("posts : " + counter.posts + " " + "likes : " + counter.likes +" " + "comments : " + counter.comments +"");
-        }
         window.startRunning = false;
+        alert("posts : " + counter.posts + "\n" + "likes : " + counter.likes + "\n" + "comments : " + counter.comments + "");
+        location.reload();
       } else {
         element.remove();
         counter.posts++;
