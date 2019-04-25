@@ -2,8 +2,25 @@
 <html lang="en">
   <head>
     <script src="popup.js"></script>
+    <style>
+    body {
+      width: 750px;
+    }
+    .force-mobile {
+        width: 750px;
+        max-width: 750px;
+        height: 1334px;
+        margin: 0 auto;
+        border-style: none;
+        border-color: inherit;
+        border-width: 0px;
+        -webkit-transform: scale(0.5);
+        -webkit-transform-origin: 0 0;
+        display: block;
+    }
+    </style>
   </head>
   <body>
-    <iframe width="500" height="500" src="https://app.leadspod.com/"></iframe>
+    <iframe class="force-mobile" frameBorder="0" src="https://app.leadspod.com/"></iframe>
   </body>
 </html>
