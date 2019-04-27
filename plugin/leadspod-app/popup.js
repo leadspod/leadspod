@@ -28,12 +28,12 @@ function bindEvent(element, eventName, eventHandler) {
 var iframeSource = 'iframe.html';
 
 // Create the iframe
-var iframe = document.createElement('iframe');
-iframe.setAttribute('src', iframeSource);
-iframe.setAttribute('id', 'the_iframe');
-iframe.style.width = 450 + 'px';
-iframe.style.height = 200 + 'px';
-document.body.appendChild(iframe);
+// var iframe = document.createElement('iframe');
+// iframe.setAttribute('src', iframeSource);
+// iframe.setAttribute('id', 'the_iframe2');
+// iframe.style.width = 450 + 'px';
+// iframe.style.height = 200 + 'px';
+// document.body.appendChild(iframe);
 
 // Send a message to the child iframe
 var iframeEl = document.getElementById('the_iframe'),
