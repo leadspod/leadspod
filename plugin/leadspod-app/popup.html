@@ -1,27 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script src="popup.js"></script>
-    <style>
-    body {
-        width: 750px;
-        height: 600px;
-    }
-    .force-mobile {
-        width: 750px;
-        max-width: 750px;
-        height: 1334px;
-        margin: 0 auto;
-        border-style: none;
-        border-color: inherit;
-        border-width: 0px;
-        _-webkit-transform: scale(0.5);
-        _-webkit-transform-origin: 0 0;
-        display: block;
-    }
-    </style>
-  </head>
-  <body>
-    <iframe class="force-mobile" frameBorder="0" src="https://app.leadspod.com/"></iframe>
-  </body>
+<head>
+    <meta charset="utf-8">
+    <title>Parent Window</title>
+</head>
+<body>
+
+    <h1>Parent Window</h1>
+    <p>Send Message: <button id="message_button">Hi there iframe</button></p>
+    <p>Got Message:</p>
+    <div id="results"></div>
+    <br/>
+
+  <script src="popup.js" charset="utf-8"></script>
+</body>
 </html>

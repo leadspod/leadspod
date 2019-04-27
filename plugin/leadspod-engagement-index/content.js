@@ -47,6 +47,7 @@
     win.ready = ready;
 
 })(this);
+
 var counter = {
   posts: 0,
   likes: 0,
