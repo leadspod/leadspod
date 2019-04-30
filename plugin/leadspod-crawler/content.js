@@ -99,7 +99,7 @@ var start = function (request, sender, sendResponse) {
 
     });
   }
-  window.startRunning = true;
+
 }
 
 console.log('crawler');
