@@ -52,7 +52,6 @@ var start = function (request, sender, sendResponse) {
   } else {
     posts.forEach(function (element) {
       var targetDiv = element.getElementsByClassName("feed-shared-update-v2__description")[0];
-      console.log(targetDiv.innerText);
       var re = new RegExp(request, 'gi')
       var matches = targetDiv.innerText.match(re)
       var id = element.parentElement.getAttribute('data-id');
@@ -74,7 +73,7 @@ var start = function (request, sender, sendResponse) {
 }
 window.startRunning = false;
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  if(!window.startRunning) {
+ if(!window.startRunning) {
     setInterval(function () {
       if(window.startRunning) {
         start(request, sender, sendResponse);
