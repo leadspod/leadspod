@@ -71,27 +71,28 @@ var start = function (request, sender, sendResponse) {
     posts.forEach(function (element) {
 
       var timePeriodDiv = element.getElementsByClassName("feed-shared-actor__sub-description")[0];
-      var timePeriod = "2d";
+      var timePeriod = "1d";
       if(timePeriodDiv) {
+        console.log(timePeriodDiv.innerText);
         var matchesTimePeriod = timePeriodDiv.innerText.match(timePeriod);
 
         var socialCounts = element.getElementsByClassName('feed-shared-social-counts')[0];
         if(socialCounts) {
           for(var i = 0; i < socialCounts.children.length; i++) {
-            counter.likes = counter.likes + getSocialCounts(socialCounts.children[i], 'likes');
-            counter.comments = counter.comments + getSocialCounts(socialCounts.children[i], 'comments');
+            counter.likes = getSocialCounts(socialCounts.children[i], 'likes');
+            counter.comments = getSocialCounts(socialCounts.children[i], 'comments');
           }
         }
 
-        // if(matchesTimePeriod && matchesTimePeriod.length > 0) {
+        if(matchesTimePeriod && matchesTimePeriod.length > 0) {
           if(window.startRunning) {
             window.startRunning = false;
-            if( counter.likes < 30 ) {
+            //if( counter.likes < 3000 ) {
               console.log("likes " + counter.likes);
               console.log("comments " + counter.comments);
-            }
+            //}
           }
-        // }
+        }
       }
 
       element.remove();
@@ -101,6 +102,7 @@ var start = function (request, sender, sendResponse) {
   window.startRunning = true;
 }
 
+console.log('crawler');
 window.startRunning = false;
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   if(!window.startRunning) {
