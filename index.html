@@ -101,26 +101,40 @@
 
 	<script type="text/javascript" src="js/flowquest.js"></script>
 	<script type="text/javascript">
+		var addLoader = function() {
+			var img = new Image();
+			img.src = 'loader.gif';
+			img.id = "loader";
+			document.querySelector('body > div > div.col-md-6.p-0.bg-left.h-md-100.left-side > div > div').after(img);
+			document.querySelector('body > div > div.col-md-6.p-0.bg-left.h-md-100.left-side > div > div').style.visibility = "hidden";
+		}
+		var removeLoader = function() {
+			document.querySelector('#loader').remove();
+		}
 
-		var registerUser = function(){
+		var registerUser = function() {
+			addLoader();
+			var url = $('#url').val();
 			var data = {
-				"username": $('#url').val().replace("https://www.linkedin.com/in/","").replace("/",""),
+				"username": url.replace("https://www.linkedin.com/in/", "").replace("/", ""),
 				"email": $('#email').val(),
 				"password": Math.random().toString(36).slice(-9)
 			};
 
 			var url = 'https://app.leadspod.com/register';
 			var jqxhr = $.post(url, data, function(data) {
-					console.log(data);
-					saveQuestionaireCode();
-				})
-				.fail(function(data) {
-					console.log(data);
-					alert("Oeps something went wrong please email to hello@leadspod.com to get an account")
-				});
+				console.log(data);
+				saveQuestionaireCode();
+			}).always(function(data) {
+				var status = data.status;
+				console.log(data);
+				saveQuestionaireCode();
+				//alert("Oeps something went wrong please email to hello@leadspod.com to get an account");
+			});
 		}
-		var saveQuestionaireCode = function(){
+		var saveQuestionaireCode = function() {
 			var post_data = {
+				"name": $('#url').val().replace("https://www.linkedin.com/in/", "").replace("/", ""),
 				'url': $('#url').val(),
 				'email': $('#email').val(),
 				'code': $('#code').val(),
@@ -134,6 +148,7 @@
 						$('#answer-result').after(
 							"<p>\r\n\tBy listening to your feedback<br>\r\n\tand focusing on the meaningful<br>\r\n\tengagement, encouragement and support\r\n\t<\/p>\r\n\t<p>\r\n\twe created LeadsPod.\r\n\t<\/p><p>Read our story <a class='text-white big' href='story.html'><strong>here<\/strong></a><\/p>."
 						);
+						removeLoader();
 					}, 500);
 
 				})
