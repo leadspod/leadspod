@@ -123,11 +123,11 @@
 
 			var url = 'https://app.leadspod.com/register';
 			var jqxhr = $.post(url, data, function(data) {
-				console.log(data);
+				//console.log(data);
 				saveQuestionaireCode();
 			}).always(function(data) {
 				var status = data.status;
-				console.log(data);
+				//console.log(data);
 				saveQuestionaireCode();
 				//alert("Oeps something went wrong please email to hello@leadspod.com to get an account");
 			});
