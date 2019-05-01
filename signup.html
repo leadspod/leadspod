@@ -76,7 +76,15 @@
 		<div class="col-md-6 p-0 bg-left h-md-100 left-side">
 			<div class="text-black d-md-flex align-items-center h-100 p-5 text-center justify-content-center">
 				<div class="content pt-5 pb-5 animated fadeIn">
-					<p>Growing online is better done together.</p>
+
+					<div class="input-group mb-3">
+						<input id="email" type="text" class="form-control" placeholder="Email">
+						<input id="code" type="text" class="form-control" placeholder="Invite code">
+						<div class="input-group-append">
+							<button class="btn btn-outline-secondary" type="button">Submit</button>
+						</div>
+					</div>
+
 				</div>
 			</div>
 		</div>
@@ -85,7 +93,9 @@
 
 		<div class="col-md-6 p-0 bg-right h-md-100 loginarea right-side">
 			<div class="d-md-flex align-items-center h-md-100 p-5 justify-content-center">
-				<div id="flowquest_container" class="content animated fadeIn"></div>
+
+				<p style="color:#fff;">Growing online is better done together.</p>
+
 			</div>
 		</div>
 
@@ -97,71 +107,34 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-	<script type="text/javascript" src="js/data.js"></script>
 
-	<script type="text/javascript" src="js/flowquest.js"></script>
 	<script type="text/javascript">
+		document.addEventListener("DOMContentLoaded", function() {
 
-		var registerUser = function(){
-			var data = {
-				"username": $('#url').val().replace("https://www.linkedin.com/in/","").replace("/",""),
-				"email": $('#email').val(),
-				"password": Math.random().toString(36).slice(-9)
-			};
+		}, false);
 
-			var url = 'https://app.leadspod.com/register';
-			var jqxhr = $.post(url, data, function(data) {
-					console.log(data);
-					saveQuestionaireCode();
-				})
-				.fail(function(data) {
-					console.log(data);
-					alert("Oeps something went wrong please email to hello@leadspod.com to get an account")
-				});
-		}
-		var saveQuestionaireCode = function(){
+
+		$(document).on("click", 'button', function() {
 			var post_data = {
 				'url': $('#url').val(),
 				'email': $('#email').val(),
 				'code': $('#code').val(),
 				'choice': $('#answer-result').html() + ' other : ' + readCookie('other')
 			};
-			var url = 'https://script.google.com/macros/s/AKfycby7x0xcd4cXDGQohaJqgngRXBsiI4OXI6Y9XsBFBG1YkiGpmoE/exec';
-			var jqxhr = $.post(url, post_data, function(post_data) {
-					setTimeout(function() {
-						$('#answer-result').before("<h4 class='text-white'>Thanks for registering! We will contact you shortly with a follow-up!</h4>");
-						//window.location.replace('/thank-you.html');
-						$('#answer-result').after(
-							"<p>\r\n\tBy listening to your feedback<br>\r\n\tand focusing on the meaningful<br>\r\n\tengagement, encouragement and support\r\n\t<\/p>\r\n\t<p>\r\n\twe created LeadsPod.\r\n\t<\/p><p>Read our story <a class='text-white big' href='story.html'><strong>here<\/strong></a><\/p>."
-						);
-					}, 500);
 
+			var data = {
+				"username": "rcooke2",
+				"email": "hello2@leadturk.com",
+				"password": "testtest"
+			};
+
+			var url = 'https://app.leadspod.com/register';
+			var jqxhr = $.post(url, data, function(data) {
+					console.log(data);
 				})
 				.fail(function(data) {
-					setTimeout(function() {
-						$('#answer-result').after("<p>Oops, something went wrong! It happens to the best of us...</p>");
-					}, 500);
+					console.log(data);
 				});
-		}
-
-		document.addEventListener("DOMContentLoaded", function() {
-			flowquest(fq_colors);
-		}, false);
-
-		$(document).on("click", '.fq-option', function() {
-			if ($('#other').length) {
-				$('#flowquest_container').hide();
-				$('#other-btn').on("click", function() {
-					createCookie('other', $('#other').val(), 7);
-					$('#flowquest_container').show();
-					$('body > div > div.col-md-6.p-0.bg-left.h-md-100.left-side > div > div').html('<p>Growing online is better done together.</p>');
-				});
-			} else {}
-		});
-
-		$(document).on("click", 'button', function() {
-
-			registerUser();
 
 		});
 	</script>

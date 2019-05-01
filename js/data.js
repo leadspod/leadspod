@@ -135,7 +135,7 @@ var fq_colors = {
           "label": "<span class='option'>a</span><span class='option-value'>With my invite code</span>",
           "val": "5a",
           "classes": "",
-          "content": "<div class=\"input-group mb-3\">\r\n <input id=\"email\" type=\"text\" class=\"form-control\" placeholder=\"Email\">\r\n <input id=\"code\" type=\"text\" class=\"form-control\" placeholder=\"Invite code\">\r\n  <div class=\"input-group-append\">\r\n    <button class=\"btn btn-outline-secondary\" type=\"button\">Submit<\/button>\r\n  <\/div>\r\n<\/div>",
+          "content": "<div class=\"input-group mb-3\">\r\n <input id=\"url\" type=\"text\" class=\"form-control\" placeholder=\"LinkedIn url\">\r\n <\/div><div class=\"input-group mb-3\">\r\n <input id=\"email\" type=\"text\" class=\"form-control\" placeholder=\"Email\">\r\n <input id=\"code\" type=\"text\" class=\"form-control\" placeholder=\"Invite code\">\r\n  <div class=\"input-group-append\">\r\n    <button class=\"btn btn-outline-secondary\" type=\"button\">Submit<\/button>\r\n  <\/div>\r\n<\/div>",
           "nextQ": null
         },
         "5b": {
