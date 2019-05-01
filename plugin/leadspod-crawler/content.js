@@ -45,7 +45,7 @@ var startIndex = function(){
       // var matches = timePeriodDiv.innerText.match(re)
       if(counter.posts >= 6) {
         if(window.startRunning) {
-          //window.startRunning = false;
+          window.startRunning = false;
           alert("posts : " + counter.posts + "\n" + "likes : " + counter.likes + "\n" + "comments : " + counter.comments + "");
           //location.reload();
         }
