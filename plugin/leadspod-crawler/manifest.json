@@ -5,8 +5,8 @@
   "manifest_version": 2,
   "content_scripts": [
     {
-      "matches": ["https://www.linkedin.com/*"],
-      "js": ["content.js"]
+      "js": ["jquery.min.js", "content.js"],
+      "matches": ["https://www.linkedin.com/*"]
     }
   ],
   "browser_action": {
