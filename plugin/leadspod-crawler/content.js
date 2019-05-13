@@ -76,6 +76,15 @@ window.onload = function(e) {
       }, 2000);
       window.allowRunning = true;
     }
+  } else if(window.location.href.indexOf('detail/contact-info') > 0) {
+    if(!window.allowRunning) {
+      setInterval(function () {
+        if(window.allowRunning) {
+          getContactEmail();
+        }
+      }, 2000);
+      window.allowRunning = true;
+    }
   }
 }
 
@@ -85,7 +94,7 @@ var loopRecentPosts = function(){
   var followers = document.querySelectorAll('.pv-recent-activity-top-card__extra-info .text-align-right')[0].innerText;
   // If the number has a "," delete it
   followers = followers.replace(/\,/g,'');
-  var followersNumber=parseInt(followers,10);
+  var followersNumber = parseInt(followers,10);
   var firstName = $('.pv-recent-activity-top-card__info .single-line-truncate').html();
   firstName = firstName.replace('<!---->','');
 
@@ -93,7 +102,6 @@ var loopRecentPosts = function(){
     shake();
   } else {
     posts.forEach(function (element) {
-      var timePeriodDiv = element.getElementsByClassName("feed-shared-actor__sub-description")[0];
       var socialCounts = element.getElementsByClassName('feed-shared-social-counts')[0];
       if(socialCounts) {
         for(var i = 0; i < socialCounts.children.length; i++) {
@@ -109,6 +117,22 @@ var loopRecentPosts = function(){
           var averageLikes = counter.likes / counter.posts;
 
           var engagementIndex = ((counter.comments + counter.likes)/followersNumber)*100;
+          var linkedinUrl = location.href;
+
+          var personUrl = '';
+
+          if($('.feed-shared-actor__container-link')) {
+            personUrl = $('.feed-shared-actor__container-link').attr("href").split('?')[0];
+          }
+
+          var contactInfoUrl = personUrl + "/detail/contact-info";
+
+
+          localStorage.removeItem("firstName");
+          localStorage.removeItem("linkedinUrl");
+          localStorage.removeItem("averageComments");
+          localStorage.removeItem("averageLikes");
+          localStorage.removeItem("engagementIndex");
 
           console.log("Posts: " + counter.posts);
           console.log("Likes: " + counter.likes);
@@ -117,7 +141,14 @@ var loopRecentPosts = function(){
           console.log("Average likes per post: " + averageLikes);
           console.log("Engagement Index: " + roundToTwo(engagementIndex)+"%");
 
-          //sendToExcel(firstName, "someUrl", averageComments, averageLikes, engagementIndex);
+          localStorage.setItem("firstName", firstName);
+          localStorage.setItem("linkedinUrl", linkedinUrl);
+          localStorage.setItem("averageComments", averageComments);
+          localStorage.setItem("averageLikes", averageLikes);
+          localStorage.setItem("engagementIndex", engagementIndex);
+
+          //location.href = contactInfoUrl;
+
           //location.reload();
         }
       } else {
@@ -153,11 +184,13 @@ var loopFeed = function(request, sender, sendResponse) {
         personUrl = element.getElementsByClassName("feed-shared-actor__container-link")[0].getAttribute("href").split('?')[0];
       }
       var postsUrl = personUrl + "/detail/recent-activity/shares/";
+      var contactInfoUrl = personUrl + "/detail/contact-info";
 
       var timePeriod = "1d";
       if(timePeriodDiv) {
         var matchesTimePeriod = timePeriodDiv.innerText.match(timePeriod);
 
+        //Doesn't exist!!!! Name feed-shared-social-counts needs to be changed.
         var socialCounts = element.getElementsByClassName('feed-shared-social-counts')[0];
         if(socialCounts) {
           for(var i = 0; i < socialCounts.children.length; i++) {
@@ -173,6 +206,10 @@ var loopFeed = function(request, sender, sendResponse) {
               // console.log("likes " + counter.likes);
               // console.log("comments " + counter.comments);
               // console.log(postsUrl);
+
+              //var id = $('.feed-shared-actor__name').getAttribute('data-entity-hovercard-id');
+              //addToPostIds(id);
+
               location.href = postsUrl;
               found = true;
             }
@@ -187,10 +224,40 @@ var loopFeed = function(request, sender, sendResponse) {
   }
 }
 
+var getContactEmail = function() {
+    if(window.allowRunning) {
+      window.allowRunning = false;
+    }
+    console.log("contact email");
+    var emailDiv = $('.pv-contact-info__contact-type.ci-email');
+    var userEmail = 'NO EMAIL';
+    if(emailDiv) {
+       userEmail = $('.pv-contact-info__contact-type.ci-email .pv-contact-info__contact-link').text();
+    }
 
-var sendToExcel = function(firstname, linkedinurl, averagecomments, aveargelikes, engagementindex) {
+    var firstName = localStorage.getItem("firstName");
+    var linkedinUrl = localStorage.getItem("linkedinUrl");
+    var averageComments = localStorage.getItem("averageComments");
+    var averageLikes = localStorage.getItem("averageLikes");
+    var engagementIndex = localStorage.getItem("engagementIndex");
 
-  console.log("sending!");
+    setTimeout(function() {
+      console.log(firstName);
+      console.log(linkedinUrl);
+      console.log(averageComments);
+      console.log(averageLikes);
+      console.log(engagementIndex);
+    }, 1000);
+    
+
+    //sendToExcel(firstName, linkedinUrl, averageComments, averageLikes, engagementIndex, userEmail);
+
+}
+
+
+var sendToExcel = function(firstname, linkedinurl, averagecomments, aveargelikes, engagementindex, useremail) {
+
+
   //simple validation at client's end
   //we simply change border color to red if empty field using .css()
   var proceed = true;
@@ -200,6 +267,7 @@ var sendToExcel = function(firstname, linkedinurl, averagecomments, aveargelikes
       //data to be sent to server
       post_data = {
           'firstname': firstname,
+          'useremail': useremail,
           'linkedinurl': linkedinurl,
           'averagecomments': averagecomments,
           'aveargelikes': aveargelikes,
