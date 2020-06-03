@@ -209,6 +209,11 @@ function isEmail(email) {
             }
         });
 
+        $("#goto-leadspod-download-course-hero").click(function (event) {
+          event.preventDefault(); 
+          document.documentElement.scrollTop = 0; 
+        });
+
 
         $("#leadspod-download-course-footer-submit").click(function (event) {
           event.preventDefault(); 
