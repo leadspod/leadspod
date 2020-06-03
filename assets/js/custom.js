@@ -262,6 +262,16 @@ function isEmail(email) {
           }
       });
 
+
+
+      $(".start-coaching").click(function (event) {
+        event.preventDefault();
+        var pricetype = event.target.dataset.price;
+        $('.modal').modal('show');
+      });
+
+
+
   });
 
 

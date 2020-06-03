@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- site-key : 6Lfdzv8UAAAAAFN9Ym52EBhylIYRIrCV5ikO1Lok-->
+
 <head>
   <meta charset="utf-8">
   <title>LeadsPod - Conversational Marketing</title>
@@ -19,6 +20,7 @@
   <link rel="stylesheet" href="assets/css/magnific-popup.css">
   <link rel="stylesheet" href="assets/css/ionicons.min.css"> <!-- Resource style -->
   <link href="assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="assets/css/custom.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 
 <body>
@@ -26,137 +28,72 @@
 
 
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="site-heading modal-body">
-                    <p>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <br></p>
-                    <div class="text-center">
-                        <h2>A LinkedIn strategy that works!</h2>
-                        <h3 style="color: #2568ef;">
-                            Build a valuable network with real relationships
-                        </h3>
-                    </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="site-heading modal-body">
+          <p>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <br></p>
+          <div class="text-center">
+            <h2>A LinkedIn strategy that works!</h2>
+            <h3 style="color: #2568ef;">
+              Build a valuable network with real relationships
+            </h3>
+          </div>
 
-                    <!--payment button-->
+          <!--payment button-->
 
-                    <div class="hide pricing-header pricing-box text-center" id="payment-free">
-                        <div class="pricing-popup">
-                            <h4>Get our app</h4>
-                            <h2><sup></sup>&nbsp;</h2>
-
-                            <form>
-                                <table>
-                                <tr><td>NAME</td></tr>
-                                <tr><td>
-                                    <input id="free-account-name"  type="text"  maxlength="200"></td></tr>
-                                <tr><td>EMAIL</td></tr>
-                                <tr><td>
-                                    <input id="free-account-email"  type="text"  maxlength="200"></td></tr>
-                                <tr><td>INVITE CODE</td></tr>
-                                    <tr><td>
-                                        <input id="free-account-code"  type="text"  maxlength="200"></td></tr>
-                                </table>
-                            </form>
-                            <a id="free-account" class="btn btn-theme border btn-md" style="color: #2568ef; border: 1px solid #cccccc; margin-top: 10px;" href="https://chrome.google.com/webstore/detail/linkedin-engagement-track/fdkablkeafaegdohgdcpfljllilfcmih?hl=en">DOWNLOAD</a>
-
-                        </div>
-                    </div>
-
-
-                    <div class="hide pricing-header pricing-box text-center" id="payment-prepaid">
-                        <div class="pricing-popup">
-                            <h4>Pre paid</h4>
-                            <h2><sup>$</sup>25</h2>
-                        </div>
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                            <input type="hidden" name="cmd" value="_s-xclick">
-                            <input type="hidden" name="hosted_button_id" value="C3UA9NC995FX2">
-                            <input type="image" src="https://www.paypalobjects.com/en_GB/TH/i/btn/btn_buynowCC_LG.gif"
-                                border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
-                            <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1"
-                                height="1">
-                        </form>
-                    </div>
-
-
-
-                    <div class="hide pricing-header pricing-box text-center" id="payment-unlimited">
-                        <div class="pricing-popup">
-                            <h4>Unlimited</h4>
-                            <h2><sup>$</sup>9.95 /mo</h2>
-                        </div>
-
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                            <input type="hidden" name="cmd" value="_s-xclick">
-                            <input type="hidden" name="hosted_button_id" value="MZUZK6RGXYFSN">
-                            <table>
-                            <tr><td><input type="hidden" name="on0" value="Contact email">CONTACT EMAIL</td></tr><tr><td><input type="text" name="os0" maxlength="200"></td></tr>
-                            </table>
-                            <input type="image" src="https://www.paypalobjects.com/en_GB/TH/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
-                            <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-                            </form>
-                            
-                        
-                    </div>
-
-
-                    <div class="hide pricing-header pricing-box text-center" id="payment-professional">
-                        <div class="pricing-popup">
-                            <h4>Professional</h4>
-                            <h2><sup>$</sup>49 /mo</h2>
-                        </div>
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                            <input type="hidden" name="cmd" value="_s-xclick">
-                            <input type="hidden" name="hosted_button_id" value="5CCCRSXYQF9C8">
-                            <input type="image" src="https://www.paypalobjects.com/en_GB/TH/i/btn/btn_buynowCC_LG.gif"
-                                border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
-                            <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1"
-                                height="1">
-                        </form>
-                    </div>
-
-                    <div class="hide pricing-header pricing-box text-center" id="payment-premium">
-                        <div class="pricing-popup">
-                            <h4>Premium</h4>
-                            <h2><sup>$</sup>99 /mo</h2>
-                        </div>
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                            <input type="hidden" name="cmd" value="_s-xclick">
-                            <input type="hidden" name="hosted_button_id" value="UM5TAGCK5LSR4">
-                            <table>
-                            <tr><td><input type="hidden" name="on0" value="Contact email">CONTACT EMAIL</td></tr><tr><td><input type="text" name="os0" maxlength="200"></td></tr>
-                            </table>
-                            <input type="image" src="https://www.paypalobjects.com/en_GB/TH/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
-                            <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-                            </form>
-                            
-                    </div>
-
-                    <!--payment button-->
-
-                    <p style="display: flex;justify-content: center;">
-                        <img style="width: 40%;    margin: 30px;" src="assets/img/team/kai.png" alt="Thumb">
-                        <ul style="display: flex;justify-content: center;">
-                            <li class="linkedin">
-                                <i style="margin-bottom: -3px;" class="fab fa-linkedin-in"></i> <a
-                                    href="https://www.linkedin.com/in/kanokarn-tevapitak/">Kai Tevapitak, PhD -
-                                    Owner</a><br>
-                                <i class="fas fa-envelope"></i> kai@prospecting.in <br>
-                            </li>
-                        </ul>
-                    </p>
-                </div>
+          <div class="hide pricing-header pricing-box text-center" id="payment-premium">
+            <div class="pricing-popup">
+              <h4>5hrs Coaching</h4>
+              <h2>$199</h2>
             </div>
+
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+              <input type="hidden" name="cmd" value="_s-xclick">
+              <input type="hidden" name="hosted_button_id" value="D22D6MY5JFPCN">
+              <table>
+                <tr>
+                  <td><input type="hidden" name="on0" value="Contact Email">
+                    <h4>CONTACT EMAIL</h4>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="text" name="os0" maxlength="200"></td>
+                </tr>
+              </table>
+              <input type="image" src="https://www.paypalobjects.com/en_GB/TH/i/btn/btn_buynowCC_LG.gif" border="0"
+                name="submit" alt="PayPal – The safer, easier way to pay online!">
+              <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+            </form>
+
+
+
+          </div>
+
+          <!--payment button-->
+
+          <p style="display:none; _display: flex;justify-content: center;">
+            <img style="width: 40%;    margin: 30px;" src="assets/img/team/kai.png" alt="Thumb">
+          <ul style="display:none; _display: flex;justify-content: center;">
+            <li class="linkedin">
+              <i style="margin-bottom: -3px;" class="fab fa-linkedin-in"></i> <a
+                href="https://www.linkedin.com/in/kanokarn-tevapitak/">Kai Tevapitak, PhD -
+                Owner</a><br>
+              <i class="fas fa-envelope"></i> kai@prospecting.in <br>
+            </li>
+          </ul>
+          </p>
         </div>
+      </div>
     </div>
-    <!-- End Modal -->
+  </div>
+  <!-- End Modal -->
 
 
   <div class="wrapper">
@@ -209,11 +146,13 @@
                     </div>
                     <div class="form-group col-sm-12">
                       <label for="email" class="h4">Email*</label>
-                      <input type="email" class="form-control" id="free-account-email" placeholder="Email address" required>
+                      <input type="email" class="form-control" id="free-account-email" placeholder="Email address"
+                        required>
                       <div class="help-block with-errors"></div>
                     </div>
                   </div>
-                  <button type="submit" id="leadspod-download-course-hero-submit" class="btn-action">Download Course</button>
+                  <button type="submit" id="leadspod-download-course-hero-submit" class="btn-action">Download
+                    Course</button>
                   <div id="msgSubmit" class="h3 text-center hidden"></div>
                   <div class="clearfix"></div>
                 </form>
@@ -317,7 +256,8 @@
             <div class="f-text">
               <div class="left-content">
                 <h2>Grow your business.</h2>
-                <p>Most of us only engage with people that they like and feel comfortable with, this is a very common but, will prevent you from using LinkedIn effectively to grow your business.
+                <p>Most of us only engage with people that they like and feel comfortable with, this is a very common
+                  but, will prevent you from using LinkedIn effectively to grow your business.
                 </p>
                 <a href="#pricing">Know more</a>
               </div>
@@ -334,7 +274,8 @@
             <div class="container">
               <div class="col-lg-8 col-xs-12">
                 <h4>A LinkedIn strategy that works!</h4>
-                <h2>The most powerful way of letting your ideal clients learn about you is to directly engage with them.</h2>
+                <h2>The most powerful way of letting your ideal clients learn about you is to directly engage with them.
+                </h2>
                 <a class="btn-action" href="#pricing">Start Now</a>
               </div>
             </div>
@@ -396,7 +337,8 @@
               <div class="flx_2">
                 <div class="review-text">
                   <div class="review-text-inner">
-                    <h1>"We have a complex B2B product and have tried different campaigns, but nothing compares to direct relationship building on LinkedIn. Thanks for the coaching!"
+                    <h1>"We have a complex B2B product and have tried different campaigns, but nothing compares to
+                      direct relationship building on LinkedIn. Thanks for the coaching!"
                     </h1>
                     <h2>Patama Parivatanamisorn, Head Of Program Management</h2>
                     <a href="#">The Mullion Group</a>
@@ -409,8 +351,7 @@
               <div class="flx_1">
                 <div class="review-img">
                   <div class="review-img-inner">
-                    <img class="img-fluid rounded-circle" src="assets/images/charlie_price.jpeg"
-                      alt="Client">
+                    <img class="img-fluid rounded-circle" src="assets/images/charlie_price.jpeg" alt="Client">
                   </div>
                 </div>
               </div>
@@ -471,7 +412,8 @@
               <div class="pricing-intro">
                 <h1>A LinkedIn strategy that works!</h1>
                 <p>We have seen amazing results with our campaigns.
-                  <br class="hidden-xs"> Even for clients that have no experience or only had minimal results with other campaigns. 
+                  <br class="hidden-xs"> Even for clients that have no experience or only had minimal results with other
+                  campaigns.
                 </p>
               </div>
               <div class="row">
@@ -483,7 +425,8 @@
                       <span>FREE</span>
                       <div class="sub_span">&nbsp;</div>
                     </div>
-                    <button id="goto-leadspod-download-course-hero" class="btn btn-primary btn-action" type="button">Download</button>
+                    <button id="goto-leadspod-download-course-hero" class="btn btn-primary btn-action"
+                      type="button">Download</button>
                   </div>
                 </div>
 
@@ -496,11 +439,12 @@
                       <span>$199</span>
                       <div class="sub_span sub_span_alt">&nbsp;</div>
                     </div>
-                    <button class="btn btn-primary btn-action btn-white" type="button">Signup</button>
+                    <button class="start-coaching btn btn-primary btn-action btn-white" type="button">Signup</button>
                   </div>
                 </div>
               </div>
-              <p class="refund-txt">* Before signing up for coaching it is advised to do the free course first to save you time and decide if coaching is necessary </p>
+              <p class="refund-txt">* Before signing up for coaching it is advised to do the free course first to save
+                you time and decide if coaching is necessary </p>
             </div>
           </div>
         </div>
@@ -586,18 +530,22 @@
             <div class="container">
               <div class="col-lg-8 offset-lg-2">
                 <h4>A LinkedIn strategy that works!</h4>
-                <h2>The most powerful way of letting your ideal clients learn about you is to directly engage with them.</h2>
+                <h2>The most powerful way of letting your ideal clients learn about you is to directly engage with them.
+                </h2>
                 <form id="chimp-form" class="sub-form" action="assets/php/subscribe.php" method="post"
                   accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" autocomplete="off" novalidate>
-                  <input class="name" id="leadspod-download-course-footer-name" type="text" name="name" placeholder="Type your name"
-                    autocomplete="off"><br>
-                  <input class="mail" id="leadspod-download-course-footer-email" type="email" name="email" placeholder="Type your email address"
-                    autocomplete="off"><input id="leadspod-download-course-footer-submit" class="submit-button" type="submit" value="Download Our Course">
+                  <input class="name" id="leadspod-download-course-footer-name" type="text" name="name"
+                    placeholder="Type your name" autocomplete="off"><br>
+                  <input class="mail" id="leadspod-download-course-footer-email" type="email" name="email"
+                    placeholder="Type your email address" autocomplete="off"><input
+                    id="leadspod-download-course-footer-submit" class="submit-button" type="submit"
+                    value="Download Our Course">
                 </form>
                 <div id="response"></div>
                 <div class="form-note">
                   <p><br><br>
-                    Before signing up for coaching it is advised to do the free course first to save you time and decide if coaching is necessary                    </p>
+                    Before signing up for coaching it is advised to do the free course first to save you time and decide
+                    if coaching is necessary </p>
                 </div>
               </div>
             </div>
@@ -626,7 +574,8 @@
             <div class="col-lg-4 col-md-3 col-sm-12">
               <div class="footer-links">
                 <ul>
-                  <li><a href="https://www.linkedin.com/company/leadspod/about/"> <img class="img-fluid" src="assets/icons/li.png" alt="Icon"> </a> </li>
+                  <li><a href="https://www.linkedin.com/company/leadspod/about/"> <img class="img-fluid"
+                        src="assets/icons/li.png" alt="Icon"> </a> </li>
                   <!--
                   <li><a href="#main"> <img class="img-fluid" src="assets/icons/in.png" alt="Icon"> </a> </li>
                   <li><a href="#main"> <img class="img-fluid" src="assets/icons/tw.png" alt="Icon"> </a> </li>
