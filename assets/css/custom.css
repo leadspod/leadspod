@@ -31,3 +31,13 @@
 #payment-premium > form > table  h4 {
     margin: 10px;
 }
+
+.coach-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.coach-title {
+    font-size: 15px;
+    font-weight: bold;
+}
