@@ -169,8 +169,8 @@ function isEmail(email) {
             $('#leadspod-download-course-hero-email')
                 .css('border-color', '#e7e7e7');
 
-            var email = $('#free-account-email').val();
-            var name = $('#free-account-name').val(); 
+            var email = $('#leadspod-download-course-hero-name').val();
+            var name = $('#leadspod-download-course-hero-email').val(); 
             
             var proceed = true;
             if(name == "") {
@@ -208,6 +208,54 @@ function isEmail(email) {
                 });
             }
         });
+
+
+        $("#leadspod-download-course-footer-submit").click(function (event) {
+          event.preventDefault(); 
+          $('#leadspod-download-course-footer-name')
+              .css('border-color', '#e7e7e7');
+          $('#leadspod-download-course-footer-email')
+              .css('border-color', '#e7e7e7');
+
+          var email = $('#leadspod-download-course-footer-email').val();
+          var name = $('#leadspod-download-course-footer-name').val(); 
+          
+          var proceed = true;
+          if(name == "") {
+              $('#leadspod-download-course-footer-name')
+              .css('border-color', '#e41919');
+              proceed = false;
+          }
+          if(email == "") {
+              $('#leadspod-download-course-footer-email')
+              .css('border-color', '#e41919');
+              proceed = false;
+          }
+          if(!isEmail(email)) {
+              $('#leadspod-download-course-footer-email')
+              .css('border-color', '#e41919');
+              proceed = false;
+          }
+          if(proceed) {
+          //data to be sent to server
+          post_data = {
+              'name': name,
+              'email': email,
+              'choice': "leadspod-download-course-footer"
+          };
+          var url = 'https://script.google.com/macros/s/AKfycbxk_Np2R_F1LlinTA33bAQPyg5XZn-rrs4M5xWC3lGRvts2kSX_/exec';
+          var jqxhr = $.post(url, post_data, function (post_data) {
+              setTimeout(function () {
+                  window.location.replace('thank-you.html');
+              }, 500);
+              })
+              .fail(function (data) {
+              setTimeout(function () {
+                  window.location.replace('error.html');
+              }, 500);
+              });
+          }
+      });
 
   });
 
