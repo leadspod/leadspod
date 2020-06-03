@@ -151,3 +151,64 @@ function toggleChevron(e) {
 
 
 });
+
+$(document)
+  .ready(function () {
+
+
+function isEmail(email) {
+  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+}
+
+
+        $("#leadspod-download-course-hero-submit").click(function (event) {
+            event.preventDefault(); 
+            $('#leadspod-download-course-hero-name')
+                .css('border-color', '#e7e7e7');
+            $('#leadspod-download-course-hero-email')
+                .css('border-color', '#e7e7e7');
+
+            var email = $('#free-account-email').val();
+            var name = $('#free-account-name').val(); 
+            
+            var proceed = true;
+            if(name == "") {
+                $('#leadspod-download-course-hero-name')
+                .css('border-color', '#e41919');
+                proceed = false;
+            }
+            if(email == "") {
+                $('#leadspod-download-course-hero-email')
+                .css('border-color', '#e41919');
+                proceed = false;
+            }
+            if(!isEmail(email)) {
+                $('#leadspod-download-course-hero-email')
+                .css('border-color', '#e41919');
+                proceed = false;
+            }
+            if(proceed) {
+            //data to be sent to server
+            post_data = {
+                'name': name,
+                'email': email,
+                'choice': "leadspod-download-course-hero"
+            };
+            var url = 'https://script.google.com/macros/s/AKfycbxk_Np2R_F1LlinTA33bAQPyg5XZn-rrs4M5xWC3lGRvts2kSX_/exec';
+            var jqxhr = $.post(url, post_data, function (post_data) {
+                setTimeout(function () {
+                    window.location.replace('thank-you.html');
+                }, 500);
+                })
+                .fail(function (data) {
+                setTimeout(function () {
+                    window.location.replace('error.html');
+                }, 500);
+                });
+            }
+        });
+
+  });
+
+
