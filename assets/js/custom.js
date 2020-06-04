@@ -169,8 +169,8 @@ function isEmail(email) {
             $('#leadspod-download-course-hero-email')
                 .css('border-color', '#e7e7e7');
 
-            var email = $('#leadspod-download-course-hero-name').val();
-            var name = $('#leadspod-download-course-hero-email').val(); 
+            var name = $('#leadspod-download-course-hero-name').val();
+            var email = $('#leadspod-download-course-hero-email').val(); 
             
             var proceed = true;
             if(name == "") {
