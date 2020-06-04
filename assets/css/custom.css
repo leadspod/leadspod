@@ -46,3 +46,16 @@
     font-family: 'Open Sans';
     font-size: 12px;
 }
+
+.footer-title, .footer-note {
+    margin: 25px;
+}
+.cta_sub {
+    height: 520px;
+}
+
+@media only screen and (max-width: 767px) {
+    .cta_sub {
+        height: 560px;
+    }
+}
