@@ -41,3 +41,8 @@
     font-size: 15px;
     font-weight: bold;
 }
+
+#contact-email::placeholder {
+    font-family: 'Open Sans';
+    font-size: 12px;
+}
