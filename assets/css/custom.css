@@ -62,5 +62,6 @@
 
 #recaptcha1, #recaptcha2 {
     margin-top: 20px;
+    margin-bottom: -20px;
     display: none;
 }
