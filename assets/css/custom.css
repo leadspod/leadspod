@@ -59,3 +59,8 @@
         height: 560px;
     }
 }
+
+#recaptcha1, #recaptcha2 {
+    margin-top: 20px;
+    display: none;
+}
