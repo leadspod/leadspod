@@ -265,6 +265,7 @@ h3 {
     }
     nav ul {
         flex-direction: column;
+        margin-left: -20px;
     }
     nav li {
         margin-top: 1px;
