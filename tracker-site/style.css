@@ -226,11 +226,11 @@ h3 {
         font-size: 4em;
     }
     .header-top {
-        height: 125px;
+        height: 70px;
     }
     #logo {
-        width: 135px;
-        margin-top: 10px;
+        width: 70px;
+        margin-top: 5px;
     }
     .toggle-menu {
         width: 50px;
