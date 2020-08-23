@@ -39,14 +39,15 @@ $('#fullpage').fullpage({
 
 });
 
-document.body.addEventListener('touchmove', onTouchMove, { passive: false });
 
-function onTouchMove(e) {
+document.querySelector('a.logo').addEventListener('click', onLogoClick, { passive: false });
+
+function onLogoClick(e) {
     e.preventDefault;
     try {
-        if (!screenfull.isFullscreen) {
-            //screenfull.request($('body')[0]);
-        }
+        //if (!screenfull.isFullscreen) {
+        screenfull.toggle($('body')[0]);
+        //}
     } catch (error) {}
 }
 
