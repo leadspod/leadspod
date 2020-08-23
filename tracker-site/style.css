@@ -269,11 +269,13 @@ section article {
     padding: 40px;
 }
 
-section:nth-child(1) article {
+section:nth-child(1) article,
+section:nth-child(6) article {
     background-color: #206262;
 }
 
-section:nth-child(1) .bg {
+section:nth-child(1) .bg,
+section:nth-child(6) .bg {
     background: url('red-jungle.jpg') no-repeat center center;
     background-size: cover;
 }
