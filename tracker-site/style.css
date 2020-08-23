@@ -183,6 +183,11 @@ h3 {
     font-size: 2.8em;
 }
 
+h4 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
     background: white;
@@ -206,6 +211,12 @@ h3 {
 #logo {
     width: 80px;
     margin-top: 5px;
+}
+
+.read-more {
+    margin: 25px;
+    display: block;
+    font-size: 2em;
 }
 
 @media screen and (max-width: 767px) {
@@ -248,15 +259,15 @@ h3 {
         display: block;
         height: 5px;
         background: white;
-        width: 45px;
+        width: 35px;
         left: 0px;
         transition: all .3s;
     }
     .toggle-menu i:nth-child(1) {
-        top: 8px;
+        top: 13px;
     }
     .toggle-menu i:nth-child(3) {
-        top: 40px;
+        top: 35px;
     }
     .open-menu i:nth-child(1) {
         top: 25px;
@@ -283,5 +294,11 @@ h3 {
     .fp-tableCell {
         box-sizing: border-box;
         padding: 40px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    html {
+        font-size: 15%;
     }
 }
