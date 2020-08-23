@@ -243,9 +243,8 @@ h4 {
     .header-top {
         height: 70px;
     }
-    #logo {
-        width: 70px;
-        margin-top: 5px;
+    .logo {
+        font-size: 400%;
     }
     .toggle-menu {
         width: 50px;
@@ -294,6 +293,9 @@ h4 {
     .fp-tableCell {
         box-sizing: border-box;
         padding: 40px;
+    }
+    .read-more {
+        font-size: 400%;
     }
 }
 
