@@ -51,24 +51,15 @@ function onLogoClick(e) {
     } catch (error) {}
 }
 
-setInterval(function() {
-
+let setHeight = function(newViewportHeight) {
     let sections = document.querySelectorAll('section.vertical-scrolling > div');
     for (let index = 0; index < sections.length; index++) {
         const section = sections[index];
-        if (section.style.height != window.visualViewport.height) {
-            section.setAttribute('style', "height:" + window.visualViewport.height + "px !important");
-        }
+        section.setAttribute('style', "height:" + newViewportHeight + "px !important");
     }
-}, 300);
+}
 
 
-window.addEventListener("load", function() {
-    setTimeout(function() {
-        // This hides the address bar:
-        window.scrollTo(0, 1);
-    }, 0);
-});
 
 
 $(document).ready(function() {
@@ -89,8 +80,10 @@ $(document).ready(function() {
             addressbarHeight = Math.abs(newViewportHeight - viewportHeight);
             if (newViewportHeight < viewportHeight) {
                 // Android Chrome address bar has appeared
+                setHeight(newViewportHeight);
             } else {
                 // Android Chrome address bar has disappeared
+                setHeight(newViewportHeight);
             }
         } else if (hasOrientationChanged) {
             // Orientation change
