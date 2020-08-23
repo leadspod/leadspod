@@ -40,3 +40,8 @@ function onTouchMove(e) {
         document.body.requestFullscreen();
     }
 }
+document.addEventListener("fullscreenchange", function(e) {
+    if (document.body.classList.contains('fullscreen')) {
+        document.body.classList.remove("fullscreen");
+    }
+});
