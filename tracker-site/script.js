@@ -49,5 +49,5 @@ $('ul#menu li').on('click', function() {
             $('.toggle-menu').click();
             $('nav').fadeIn("fast", function() {});
         });
-    }, 1);
+    }, 100);
 });
