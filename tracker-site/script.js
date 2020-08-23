@@ -48,15 +48,3 @@ function onLogoClick(e) {
         screenfull.toggle($('body')[0]);
     } catch (error) {}
 }
-
-let setHeight = function(newViewportHeight) {
-    let sections = document.querySelectorAll('section.vertical-scrolling > div');
-    for (let index = 0; index < sections.length; index++) {
-        const section = sections[index];
-        section.setAttribute('style', "height:" + newViewportHeight + "px !important");
-    }
-}
-
-setInterval(() => {
-    setHeight(document.body);
-}, 300);
