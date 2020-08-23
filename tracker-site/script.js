@@ -42,3 +42,7 @@ function onTouchMove(e) {
         }
     } catch (error) {}
 }
+
+$('ul#menu li').on('click', function() {
+    setTimeout(function() { $('.toggle-menu').click(); }, 1000);
+});
