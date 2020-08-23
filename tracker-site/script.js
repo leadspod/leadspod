@@ -45,7 +45,7 @@ function onTouchMove(e) {
     e.preventDefault;
     try {
         if (!screenfull.isFullscreen) {
-            screenfull.request($('body')[0]);
+            //screenfull.request($('body')[0]);
         }
     } catch (error) {}
 }
