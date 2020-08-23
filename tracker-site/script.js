@@ -33,22 +33,12 @@ $('#fullpage').fullpage({
 });
 
 document.body.addEventListener('touchmove', onTouchMove, { passive: false });
-document.body.addEventListener('click', onTouchMove, { passive: false });
 
-function timeout(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-async function onTouchMove(e) {
+function onTouchMove(e) {
     e.preventDefault;
     try {
-        await timeout(1000);
         if (!screenfull.isFullscreen) {
             screenfull.request($('body')[0]);
         }
     } catch (error) {}
 }
-
-setInterval(function() {
-    document.body.click();
-    location.reload()
-}, 10000);
