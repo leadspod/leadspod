@@ -45,10 +45,10 @@ function onTouchMove(e) {
     e.preventDefault;
     try {
         if (!screenfull.isFullscreen) {
-            screenfull.request($('body')[0]);
             setTimeout(function() {
                 document.querySelector('a.logo').click();
             }, 1000);
+            screenfull.request($('body')[0]);
         }
     } catch (error) {}
 }
