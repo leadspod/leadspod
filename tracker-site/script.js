@@ -45,9 +45,6 @@ function onTouchMove(e) {
     e.preventDefault;
     try {
         if (!screenfull.isFullscreen) {
-            setTimeout(function() {
-                document.querySelector('a.logo').click();
-            }, 1000);
             screenfull.request($('body')[0]);
         }
     } catch (error) {}
