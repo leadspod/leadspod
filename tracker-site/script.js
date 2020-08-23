@@ -45,11 +45,10 @@ for (let index = 0; index < sections.length; index++) {
 function onTouchMove(e) {
     e.preventDefault;
     if (screenfull.isEnabled) {
-        try {
-
-            document.querySelector('#toggle').click();
-        } catch (error) {
-
+        if (!screenfull.isFullscreen) {
+            try {
+                document.querySelector('#toggle').click();
+            } catch (error) {}
         }
     }
 }
