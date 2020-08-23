@@ -55,7 +55,8 @@ function onTouchMove(e) {
 
 
 $('#toggle').click(function() {
-    screenfull.toggle($('body')[0]).then(function() {
-        console.log('Fullscreen mode: ' + (screenfull.isFullscreen ? 'enabled' : 'disabled'))
-    });
+    screenfull.request();
+    //screenfull.toggle($('body')[0]).then(function() {
+    //    console.log('Fullscreen mode: ' + (screenfull.isFullscreen ? 'enabled' : 'disabled'))
+    //});
 });
