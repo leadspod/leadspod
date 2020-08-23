@@ -36,9 +36,6 @@ let sections = document.querySelectorAll('section');
 for (let index = 0; index < sections.length; index++) {
     const section = sections[index];
     section.addEventListener('touchend', onTouchMove, { passive: false });
-    section.addEventListener('touchmove', onTouchMove, { passive: false });
-    section.addEventListener('click', onTouchMove, { passive: false });
-    section.addEventListener('scroll', onTouchMove, { passive: false });
 }
 
 
