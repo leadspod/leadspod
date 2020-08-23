@@ -239,6 +239,13 @@ section {
     justify-content: center;
 }
 
+.fp-tableCell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 section .bg {
     position: absolute;
     z-index: -1;
@@ -253,6 +260,18 @@ section .bg {
     height: 100%;
     margin-left: 50%;
     left: -450px;
+}
+
+section article {
+    background-color: #738da5;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+section:nth-child(2) .bg {
+    background: url('red-jungle.jpg') no-repeat center center;
+    background-size: cover;
 }
 
 @media screen and (max-width: 767px) {
@@ -277,7 +296,16 @@ section .bg {
         font-size: 4em;
     }
     .header-top {
+        background: rgba(0, 47, 77, .3);
         height: 70px;
+        padding: 0px;
+        position: fixed;
+        top: 0;
+        z-index: 12;
+        box-sizing: border-box;
+        width: 100%;
+        margin-left: 0px;
+        left: 0px;
     }
     .logo {
         font-size: 400%;
