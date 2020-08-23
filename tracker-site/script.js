@@ -44,5 +44,10 @@ function onTouchMove(e) {
 }
 
 $('ul#menu li').on('click', function() {
-    setTimeout(function() { $('.toggle-menu').click(); }, 1000);
+    setTimeout(function() {
+        $('nav').fadeOut("slow", function() {
+            $('.toggle-menu').click();
+            $('nav').fadeIn("fast", function() {});
+        });
+    }, 1);
 });
