@@ -38,13 +38,3 @@ $('#fullpage').fullpage({
 
 
 });
-
-
-document.querySelector('a.logo').addEventListener('click', onLogoClick, { passive: false });
-
-function onLogoClick(e) {
-    e.preventDefault;
-    try {
-        screenfull.toggle($('body')[0]);
-    } catch (error) {}
-}
