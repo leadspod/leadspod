@@ -31,3 +31,12 @@ $('#fullpage').fullpage({
 
 
 });
+
+
+//$("body").scroll(function() {
+//  document.body.requestFullscreen();
+//});
+var goFS = document.getElementsByTagName("body");
+goFS[0].addEventListener("click", function() {
+    document.body.requestFullscreen();
+}, false);
