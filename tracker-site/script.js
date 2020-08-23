@@ -32,31 +32,23 @@ $('#fullpage').fullpage({
 
 });
 
-let sections = document.querySelectorAll('section');
-for (let index = 0; index < sections.length; index++) {
-    const section = sections[index];
-    section.addEventListener('touchend', onTouchMove, { passive: false });
-    //section.addEventListener('touchmove', onTouchMove, { passive: false });
-    //section.addEventListener('click', onTouchMove, { passive: false });
-    //section.addEventListener('scroll', onTouchMove, { passive: false });
+document.body.addEventListener('touchmove', onTouchMove, { passive: false });
+document.body.addEventListener('click', onTouchMove, { passive: false });
+
+function timeout(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
-
-
-function onTouchMove(e) {
+async function onTouchMove(e) {
     e.preventDefault;
-    if (screenfull.isEnabled) {
+    try {
+        await timeout(1000);
         if (!screenfull.isFullscreen) {
-            try {
-                document.querySelector('#toggle').click();
-            } catch (error) {}
+            screenfull.request($('body')[0]);
         }
-    }
+    } catch (error) {}
 }
 
-
-$('#toggle').click(function() {
-    screenfull.request();
-    //screenfull.toggle($('body')[0]).then(function() {
-    //    console.log('Fullscreen mode: ' + (screenfull.isFullscreen ? 'enabled' : 'disabled'))
-    //});
-});
+setInterval(function() {
+    document.body.click();
+    location.reload()
+}, 10000);
