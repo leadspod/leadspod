@@ -31,9 +31,12 @@ $('#fullpage').fullpage({
 
 
 });
-document.getElementsByTagName("body")[0].addEventListener("touchmove", function() {
+document.getElementsByTagName("body")[0].addEventListener('touchend', onTouchMove, { passive: false });
+
+function onTouchMove(e) {
+    e.preventDefault;
     if (!document.body.classList.contains('fullscreen')) {
         document.body.classList.add("fullscreen");
         document.body.requestFullscreen();
     }
-}, false);
+}
