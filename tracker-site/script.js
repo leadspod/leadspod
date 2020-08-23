@@ -44,11 +44,12 @@ function onTouchMove(e) {
 }
 
 setInterval(function() {
+
     let sections = document.querySelectorAll('section.vertical-scrolling > div');
     for (let index = 0; index < sections.length; index++) {
         const section = sections[index];
-        if (section.style.height != screen.height) {
-            section.setAttribute('style', "height:" + screen.height + "px !important");
+        if (section.style.height != window.visualViewport.height) {
+            section.setAttribute('style', "height:" + window.visualViewport.height + "px !important");
         }
     }
 }, 300);
