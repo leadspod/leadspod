@@ -1,4 +1,11 @@
-// Code By Webdevtrick ( https://webdevtrick.com )
+$('ul#menu li').on('click', function() {
+    setTimeout(function() {
+        $('nav').fadeOut("slow", function() {
+            $('.toggle-menu').click();
+            $('nav').fadeIn("fast", function() {});
+        });
+    }, 100);
+});
 var $header_top = $('.header-top');
 var $nav = $('nav');
 
@@ -39,6 +46,9 @@ function onTouchMove(e) {
     try {
         if (!screenfull.isFullscreen) {
             screenfull.request($('body')[0]);
+            setTimeout(function() {
+                document.querySelector('a.logo').click();
+            }, 1000);
         }
     } catch (error) {}
 }
@@ -53,12 +63,3 @@ setInterval(function() {
         }
     }
 }, 300);
-
-$('ul#menu li').on('click', function() {
-    setTimeout(function() {
-        $('nav').fadeOut("slow", function() {
-            $('.toggle-menu').click();
-            $('nav').fadeIn("fast", function() {});
-        });
-    }, 100);
-});
