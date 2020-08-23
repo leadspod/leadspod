@@ -308,6 +308,7 @@ h4 {
         font-size: 400%;
     }
     .section-match {
+        color: #fff !important;
         background-image: url('dark-jungle.jpg');
         background-repeat: no-repeat;
         background-size: auto;
