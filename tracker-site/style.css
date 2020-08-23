@@ -223,6 +223,11 @@ h4 {
     color: #ff0000b0;
 }
 
+.yes {
+    font-size: 174%;
+    font-weight: bold;
+}
+
 @media screen and (max-width: 767px) {
     html {
         font-size: 25%;
@@ -290,7 +295,7 @@ h4 {
         _margin-top: 1px;
     }
     nav li a {
-        font-size: 4em;
+        font-size: 7em;
     }
     .scroll-icon {
         display: none;
