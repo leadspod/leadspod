@@ -31,17 +31,32 @@ $('#fullpage').fullpage({
 
 
 });
-document.getElementsByTagName("body")[0].addEventListener('touchend', onTouchMove, { passive: false });
+
+let sections = document.querySelectorAll('section');
+for (let index = 0; index < sections.length; index++) {
+    const section = sections[index];
+    section.addEventListener('touchend', onTouchMove, { passive: false });
+    section.addEventListener('touchmove', onTouchMove, { passive: false });
+    section.addEventListener('click', onTouchMove, { passive: false });
+    section.addEventListener('scroll', onTouchMove, { passive: false });
+}
+
 
 function onTouchMove(e) {
     e.preventDefault;
-    if (!document.body.classList.contains('fullscreen')) {
-        document.body.classList.add("fullscreen");
-        document.body.requestFullscreen();
+    if (screenfull.isEnabled) {
+        try {
+
+            document.querySelector('#toggle').click();
+        } catch (error) {
+
+        }
     }
 }
-document.addEventListener("fullscreenchange", function(e) {
-    if (document.body.classList.contains('fullscreen')) {
-        document.body.classList.remove("fullscreen");
-    }
+
+
+$('#toggle').click(function() {
+    screenfull.toggle($('body')[0]).then(function() {
+        console.log('Fullscreen mode: ' + (screenfull.isFullscreen ? 'enabled' : 'disabled'))
+    });
 });
