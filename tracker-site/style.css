@@ -11,8 +11,9 @@ html {
 }
 
 body {
-    color: black;
+    background-color: rgb(232, 222, 210);
     letter-spacing: .18em;
+    color: #212121;
 }
 
 a {
