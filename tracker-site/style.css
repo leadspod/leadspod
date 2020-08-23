@@ -64,9 +64,12 @@ li {
     padding: 0 10px;
     position: fixed;
     top: 0;
-    width: 100%;
+    _width: 100%;
     z-index: 12;
     box-sizing: border-box;
+    width: 900px;
+    margin-left: 50%;
+    left: -450px;
 }
 
 h1 {
@@ -228,6 +231,30 @@ h4 {
     font-weight: bold;
 }
 
+section {
+    position: relative;
+    z-index: 1;
+    color: #fff !important;
+    display: flex;
+    justify-content: center;
+}
+
+section .bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url('dark-jungle.jpg') no-repeat center center;
+    background-size: cover;
+    _opacity: .4;
+    width: 900px;
+    height: 100%;
+    margin-left: 50%;
+    left: -450px;
+}
+
 @media screen and (max-width: 767px) {
     html {
         font-size: 25%;
@@ -306,12 +333,6 @@ h4 {
     }
     .read-more {
         font-size: 400%;
-    }
-    .section-match {
-        color: #fff !important;
-        background-image: url('dark-jungle.jpg');
-        background-repeat: no-repeat;
-        background-size: auto;
     }
 }
 
