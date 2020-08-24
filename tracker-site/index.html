@@ -43,6 +43,12 @@
                 console.log('Entering Full Screen Toggle');
             } else {
                 console.log('Exiting Full Screen Toggle');
+                /**
+                 * stop video by reloading the src of iframe
+                 * "https://www.youtube.com/embed/Y7d42LJfkqQ?rel=0&autoplay=1"
+iframe.src = iframe.src.replace('=1','=0')
+"https://www.youtube.com/embed/Y7d42LJfkqQ?rel=0&autoplay=0"
+                 * **/
             }
         });
     </script>
