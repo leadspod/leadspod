@@ -21,6 +21,7 @@
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         list-style-type: none;
         line-height: 1.4em;
+        text-transform: none;
     }
     
     .clearfix:before,
