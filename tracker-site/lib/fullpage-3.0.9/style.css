@@ -304,7 +304,7 @@
         .review-text-inner p,
         .review-text-inner h2,
         .review-text-inner a {
-            font-size: 0.7em;
+            font-size: 0.8em;
         }
         
         .review-text-inner h2 {
@@ -373,7 +373,7 @@
                 align-self: center;
             }
             h2.recommendation {
-                font-size: 1em;
+                font-size: 1.3em;
             }
         }
         
