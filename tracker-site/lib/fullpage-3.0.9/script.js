@@ -42,3 +42,8 @@ new fullpage('#fullpage', {
         }
     },
 });
+
+
+$(document).ready(function() {
+    $('.recommendation-slider').slick({});
+});
