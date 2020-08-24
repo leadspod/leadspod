@@ -45,5 +45,7 @@ new fullpage('#fullpage', {
 
 
 $(document).ready(function() {
-    $('.recommendation-slider').slick({});
+    $('.recommendation-slider').slick({
+        responsive: '400px'
+    });
 });

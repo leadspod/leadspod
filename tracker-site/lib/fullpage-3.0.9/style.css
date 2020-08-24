@@ -17,7 +17,8 @@
         }
         
         ul,
-        li {
+        li,
+        p {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             list-style-type: none;
             line-height: 1.4em;
@@ -252,6 +253,7 @@
             padding: 40px;
             max-width: 400px;
             min-width: 225px;
+            box-sizing: border-box;
         }
         
         section:nth-child(1) article,
@@ -272,6 +274,37 @@
         section:nth-child(6) .bg {
             background: url('../../assets/img/pink-jungle.jpg') no-repeat center center;
             background-size: cover;
+        }
+        
+        .recommendation-slider {
+            margin-top: 20px;
+        }
+        
+        .review-img {
+            margin-bottom: 20px;
+        }
+        
+        .rounded-circle {
+            border-radius: 50%!important;
+        }
+        
+        .review-img-inner {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .review-img img {
+            width: 60px;
+        }
+        
+        .review-text-inner p,
+        .review-text-inner h2,
+        .review-text-inner a {
+            font-size: 0.7em;
+        }
+        
+        .review-text-inner h2 {
+            margin-top: 15px;
         }
         
         @media screen and (max-width: 900px) {
