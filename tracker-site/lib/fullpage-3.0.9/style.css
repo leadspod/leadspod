@@ -6,12 +6,9 @@
         text-transform: uppercase;
     }
     
-    html {
-        font-size: 100%;
-    }
-    
+    html,
     body {
-        _letter-spacing: .18em;
+        font-size: 100%;
     }
     
     a {
@@ -21,7 +18,10 @@
     
     ul,
     li {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         list-style-type: none;
+        line-height: 1.4em;
+        letter-spacing: 1em;
     }
     
     .clearfix:before,
@@ -87,8 +87,8 @@
     }
     
     h4 {
-        margin-top: 1.2em;
-        margin-bottom: 0.6em;
+        margin-top: 1.4em;
+        margin-bottom: 0.8em;
     }
     
     .toggle-menu {
