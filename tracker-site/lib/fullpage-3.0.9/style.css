@@ -291,6 +291,9 @@
             .toggle-menu i:nth-child(3) {
                 top: 35px;
             }
+            .open-menu~nav {
+                padding: 80px 0;
+            }
             .open-menu i:nth-child(1) {
                 top: 25px;
             }
