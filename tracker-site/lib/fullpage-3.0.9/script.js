@@ -13,9 +13,11 @@ $header_top.find('a').on('click', function() {
     $(this).parent().toggleClass('open-menu');
 });
 
-$('#fullpage').fullpage({
+
+new fullpage('#fullpage', {
     sectionsColor: ['#206262', '#738da5', '#738da5', '#738da5', '#738da5', '#206262'],
     sectionSelector: '.vertical-scrolling',
+    responsiveHeight: 500,
     navigation: true,
     slidesNavigation: true,
     controlArrows: false,
@@ -35,6 +37,4 @@ $('#fullpage').fullpage({
             $('#fp-nav').show();
         }
     },
-
-
 });

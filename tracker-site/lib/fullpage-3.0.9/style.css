@@ -7,14 +7,11 @@
 }
 
 html {
-    font-size: 62.5%;
-    background-color: rgb(232, 222, 210);
+    font-size: 100%;
 }
 
 body {
-    background-color: rgb(232, 222, 210);
     letter-spacing: .18em;
-    color: #212121;
 }
 
 a {
@@ -64,7 +61,6 @@ li {
     padding: 0 10px;
     position: fixed;
     top: 0;
-    _width: 100%;
     z-index: 12;
     box-sizing: border-box;
     width: 900px;
@@ -375,3 +371,5 @@ section:nth-child(6) .bg {
         font-size: 15%;
     }
 }
+
+@media screen and (max-height: 800px) {}
