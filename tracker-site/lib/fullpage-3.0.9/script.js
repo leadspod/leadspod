@@ -21,6 +21,10 @@ new fullpage('#fullpage', {
     navigation: true,
     slidesNavigation: true,
     controlArrows: false,
+    css3: true,
+    scrollingSpeed: 800,
+    easing: 'easeInOutCubic',
+    easingcss3: 'ease',
     anchors: ['firstSection', 'secondSection', 'thirdSection', 'fourthSection', 'fifthSection', 'sixthSection'],
     menu: '#menu',
 
