@@ -262,7 +262,7 @@
         }
         
         section:nth-child(6) article {
-            background-color: #013628;
+            background-color: #08041e;
         }
         
         section:nth-child(1) .bg,
@@ -360,9 +360,6 @@
             .fp-tableCell {
                 box-sizing: border-box;
                 padding: 40px;
-            }
-            .read-more {
-                _font-size: 400%;
             }
         }
         
