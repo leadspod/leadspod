@@ -250,6 +250,7 @@
         flex-direction: column;
         padding: 40px;
         max-width: 400px;
+        min-width: 225px;
     }
     
     section:nth-child(1) article,
