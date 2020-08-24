@@ -255,13 +255,22 @@
         }
         
         section:nth-child(1) article,
-        section:nth-child(6) article {
+        section:nth-child(7) article {
             background-color: #206262;
         }
         
+        section:nth-child(6) article {
+            background-color: #013628;
+        }
+        
         section:nth-child(1) .bg,
-        section:nth-child(6) .bg {
+        section:nth-child(7) .bg {
             background: url('../../assets/img/red-jungle.jpg') no-repeat center center;
+            background-size: cover;
+        }
+        
+        section:nth-child(6) .bg {
+            background: url('../../assets/img/pink-jungle.jpg') no-repeat center center;
             background-size: cover;
         }
         

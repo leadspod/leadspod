@@ -15,7 +15,7 @@ $header_top.find('a').on('click', function() {
 
 
 new fullpage('#fullpage', {
-    sectionsColor: ['#206262', '#738da5', '#738da5', '#738da5', '#738da5', '#206262'],
+    sectionsColor: ['#206262', '#738da5', '#738da5', '#738da5', '#738da5', '#08041e', '#206262'],
     sectionSelector: '.vertical-scrolling',
     responsiveHeight: 500,
     navigation: true,
@@ -25,7 +25,7 @@ new fullpage('#fullpage', {
     scrollingSpeed: 800,
     easing: 'easeInOutCubic',
     easingcss3: 'ease',
-    anchors: ['firstSection', 'secondSection', 'thirdSection', 'fourthSection', 'fifthSection', 'sixthSection'],
+    anchors: ['firstSection', 'secondSection', 'thirdSection', 'fourthSection', 'fifthSection', 'sixthSection', 'seventhSection'],
     menu: '#menu',
 
     afterLoad: function(anchorLink, index) {
