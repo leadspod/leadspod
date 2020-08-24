@@ -21,7 +21,6 @@
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         list-style-type: none;
         line-height: 1.4em;
-        letter-spacing: 1em;
     }
     
     .clearfix:before,
@@ -244,7 +243,7 @@
         display: flex;
         flex-direction: column;
         padding: 40px;
-        width: 450px;
+        max-width: 400px;
     }
     
     section:nth-child(1) article,
