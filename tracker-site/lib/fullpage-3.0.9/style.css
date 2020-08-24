@@ -297,6 +297,10 @@
             height: 60px;
         }
         
+        .review-text-inner {
+            max-width: 350px;
+        }
+        
         .review-text-inner p,
         .review-text-inner h2,
         .review-text-inner a {
@@ -364,10 +368,6 @@
         
         @media screen and (max-width: 400px) {
             section article {
-                background-color: #738da5;
-                display: flex;
-                flex-direction: column;
-                padding: 40px;
                 max-width: 320px;
             }
         }
