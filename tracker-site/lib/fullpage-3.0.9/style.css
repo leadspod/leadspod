@@ -367,6 +367,14 @@
             section article {
                 max-width: 320px;
             }
+            .recommendation-slider {
+                max-width: 176px;
+                display: flex;
+                align-self: center;
+            }
+            h2.recommendation {
+                font-size: 1em;
+            }
         }
         
         @media screen and (max-height: 500px) {
