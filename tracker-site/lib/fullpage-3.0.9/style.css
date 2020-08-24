@@ -209,10 +209,15 @@
         margin-top: 5px;
     }
     
-    .read-more {
+    .read-more,
+    .read-more-last {
         margin-top: 50px;
         display: block;
         color: #ff0000b0;
+    }
+    
+    .read-more-last {
+        margin-top: 10px;
     }
     
     section {
