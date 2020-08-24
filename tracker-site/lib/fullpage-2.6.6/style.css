@@ -253,7 +253,7 @@ section .bg {
     bottom: 0;
     left: 0;
     right: 0;
-    background: url('dark-jungle.jpg') no-repeat center center;
+    background: url('../../assets/img/dark-jungle.jpg') no-repeat center center;
     background-size: cover;
     _opacity: .4;
     width: 900px;
@@ -276,7 +276,7 @@ section:nth-child(6) article {
 
 section:nth-child(1) .bg,
 section:nth-child(6) .bg {
-    background: url('red-jungle.jpg') no-repeat center center;
+    background: url('../../assets/img/red-jungle.jpg') no-repeat center center;
     background-size: cover;
 }
 

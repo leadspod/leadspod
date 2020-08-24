@@ -14,7 +14,7 @@ $header_top.find('a').on('click', function() {
 });
 
 $('#fullpage').fullpage({
-    sectionsColor: ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'],
+    sectionsColor: ['#206262', '#738da5', '#738da5', '#738da5', '#738da5', '#206262'],
     sectionSelector: '.vertical-scrolling',
     navigation: true,
     slidesNavigation: true,
