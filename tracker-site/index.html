@@ -8,50 +8,6 @@
     <link rel='stylesheet' href='lib/fullpage-3.0.9/fullpage.css'>
     <link rel="stylesheet" href="lib/fullpage-3.0.9/style.css">
     <link rel="icon" href="assets/img/favicon.png" type="image/png">
-    <script>
-        /**
-         * Element.requestFullScreen() polyfill
-         * @author Chris Ferdinandi
-         * @license MIT
-         */
-        if (!Element.prototype.requestFullscreen) {
-            Element.prototype.requestFullscreen = Element.prototype.mozRequestFullscreen || Element.prototype.webkitRequestFullscreen || Element.prototype.msRequestFullscreen;
-        }
-
-        // Listen for clicks
-        document.addEventListener('click', function(event) {
-
-            // Check if clicked element is a video thumbnail
-            var videoId = event.target.getAttribute('data-video');
-            if (!videoId) return;
-
-            // Create iframe
-            var iframe = document.createElement('div');
-            iframe.innerHTML = '<p>x</p><iframe width="560" height="315" src="https://www.youtube.com/embed/' + videoId + '?rel=0&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
-            var video = iframe.childNodes[1];
-
-            // Replace the image with the video
-            event.target.parentNode.replaceChild(video, event.target);
-
-            // Enter fullscreen mode
-            video.requestFullscreen();
-
-        }, false);
-
-        document.addEventListener("fullscreenchange", function() {
-            if (document.fullscreen) {
-                console.log('Entering Full Screen Toggle');
-            } else {
-                console.log('Exiting Full Screen Toggle');
-                /**
-                 * stop video by reloading the src of iframe
-                 * "https://www.youtube.com/embed/Y7d42LJfkqQ?rel=0&autoplay=1"
-iframe.src = iframe.src.replace('=1','=0')
-"https://www.youtube.com/embed/Y7d42LJfkqQ?rel=0&autoplay=0"
-                 * **/
-            }
-        });
-    </script>
 </head>
 
 <body>
@@ -106,11 +62,39 @@ iframe.src = iframe.src.replace('=1','=0')
                         </ul>
                     </li>
                 </ul>
-                <p id="video" style="position: absolute; _left:-99999px;"><img data-video="Y7d42LJfkqQ" alt="Play this video" src="http://img.youtube.com/vi/Y7d42LJfkqQ/0.jpg"></p>
+                <video style="position: absolute; left: -99999px;" width="100%" controls id="myvideo">
+                    <source src="assets/video/videoplayback.mp4" type="video/mp4">
+                  </video>
                 <a class="read-more" href="#">read more</a>
                 <script>
+                    var elem = document.documentElement;
+
+                    function openFullscreen(elem) {
+                        if (elem.requestFullscreen) {
+                            elem.requestFullscreen();
+                        } else if (elem.mozRequestFullScreen) { /* Firefox */
+                            elem.mozRequestFullScreen();
+                        } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                            elem.webkitRequestFullscreen();
+                        } else if (elem.msRequestFullscreen) { /* IE/Edge */
+                            elem.msRequestFullscreen();
+                        }
+                        elem.play();
+                        elem.addEventListener('fullscreenchange', (event) => {
+                            // document.fullscreenElement will point to the element that
+                            // is in fullscreen mode if there is one. If there isn't one,
+                            // the value of the property is null.
+                            if (document.fullscreenElement) {
+                                console.log(`Element: ${document.fullscreenElement.id} entered full-screen mode.`);
+                            } else {
+                                console.log('Leaving full-screen mode.');
+                                event.target.pause();
+                            }
+                        });
+                    }
                     document.querySelector('.read-more').addEventListener('click', function(event) {
-                        document.querySelector('#video > img').click();
+                        var elem = document.getElementById("myvideo");
+                        openFullscreen(elem);
                     });
                 </script>
             </article>
