@@ -1,2 +1,0 @@
-# soccasocial
-# leadspod
