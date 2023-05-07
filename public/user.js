@@ -96,6 +96,14 @@ var userManager = (function () {
                         
                         var dataUrl = userManager.serverUrl+"/api/dashboard/new/password?email="+email+"&key="+resetKey+"&newpassword="+encPassword;//newPassword;
                         var responseJson = await userManager.fetchJson(dataUrl);
+                        console.log(responseJson);
+                        if(responseJson.status == "true"){
+                            alert("Your password has been reset");
+                            location.reload();
+                        }else{
+                            alert("Oops something went wrong please try again or mail hello@leadspod.com");
+                            location.reload();
+                        }
                     }
                 }
                 
