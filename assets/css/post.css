@@ -1,0 +1,10 @@
+.highlighter-rouge .highlight {
+    background: #f0f5f9;
+}
+
+.site-header {
+    border-top: 5px solid #ffffff;
+    border-bottom: 1px solid white;
+    min-height: 55.95px;
+    position: relative;
+}

@@ -1,0 +1,28 @@
+body {
+    margin: 2em auto;
+    max-width: 640px;
+    padding: 0 1em;
+    line-height: 1.6;
+}
+
+#progress-container {
+    position: fixed;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    background: transparent;
+    transition: all ease-out 0.2s;
+}
+
+#progress-container.ready {
+    transform: translateY(-3px);
+}
+
+#progress-bar {
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #000;
+}

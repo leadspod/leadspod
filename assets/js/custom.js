@@ -191,20 +191,15 @@ $(document)
 
         $("#chimp-form").click(function(event) {
             event.preventDefault();
-
-
-
             $('#contact-message')
                 .css('border-color', '#fff');
             $('#contact-name')
                 .css('border-color', '#fff');
             $('#contact-email')
                 .css('border-color', '#fff');
-
             var message = $('#contact-message').val();
             var name = $('#contact-name').val();
             var email = $('#contact-email').val();
-
             var proceed = true;
             if (message == "") {
                 $('#contact-message').css('border', '2px solid red');
@@ -222,14 +217,80 @@ $(document)
                 $('#contact-email').css('border', '2px solid red');
                 proceed = false;
             }
-
             if (proceed) {
                 document.querySelector("#recaptcha1").style.display = "block";
                 document.querySelector("#contact-submit").style.display = "none";
             }
-
-
         });
+
+        $("#chimp-form3").click(function(event) {
+            event.preventDefault();
+            $('#contact-message3')
+                .css('border-color', '#fff');
+            $('#contact-name3')
+                .css('border-color', '#fff');
+            $('#contact-email3')
+                .css('border-color', '#fff');
+            var message = $('#contact-message3').val();
+            var name = $('#contact-name3').val();
+            var email = $('#contact-email3').val();
+            var proceed = true;
+            if (message == "") {
+                $('#contact-message3').css('border', '2px solid red');
+                proceed = false;
+            }
+            if (name == "") {
+                $('#contact-name3').css('border', '2px solid red');
+                proceed = false;
+            }
+            if (email == "") {
+                $('#contact-email3').css('border', '2px solid red');
+                proceed = false;
+            }
+            if (!isEmail(email)) {
+                $('#contact-email3').css('border', '2px solid red');
+                proceed = false;
+            }
+            if (proceed) {
+                document.querySelector("#recaptcha3").style.display = "block";
+                document.querySelector("#contact-submit3").style.display = "none";
+            }
+        });
+
+        $("#chimp-form4").click(function(event) {
+            event.preventDefault();
+            $('#contact-message4')
+                .css('border-color', '#fff');
+            $('#contact-name4')
+                .css('border-color', '#fff');
+            $('#contact-email4')
+                .css('border-color', '#fff');
+            var message = $('#contact-message4').val();
+            var name = $('#contact-name4').val();
+            var email = $('#contact-email4').val();
+            var proceed = true;
+            if (message == "") {
+                $('#contact-message4').css('border', '2px solid red');
+                proceed = false;
+            }
+            if (name == "") {
+                $('#contact-name4').css('border', '2px solid red');
+                proceed = false;
+            }
+            if (email == "") {
+                $('#contact-email4').css('border', '2px solid red');
+                proceed = false;
+            }
+            if (!isEmail(email)) {
+                $('#contact-email4').css('border', '2px solid red');
+                proceed = false;
+            }
+            if (proceed) {
+                document.querySelector("#recaptcha4").style.display = "block";
+                document.querySelector("#contact-submit4").style.display = "none";
+            }
+        });
+
 
         $(".register-btn").click(function(event) {
             event.preventDefault();

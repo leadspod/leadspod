@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Leadspod - Email warmup service</title>
+    <title>Leadspod - Inbound / Outbound Email Marketing.</title>
     <link rel="icon" href="assets/images/favicon-leadspod.png" type="image/png" sizes="16x16">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -75,7 +75,7 @@
             }
         }
 
-        var sendNameChoiceEmail = function(firstname, lastname, choice, email, msg) {
+        var sendNameChoiceEmail = function(firstname, lastname, choice, email, msg, successpage) {
 
             post_data = {
                 'name': firstname + " " + lastname,
@@ -86,7 +86,7 @@
             var url = 'https://script.google.com/macros/s/AKfycbxk_Np2R_F1LlinTA33bAQPyg5XZn-rrs4M5xWC3lGRvts2kSX_/exec';
             var jqxhr = $.post(url, post_data, function(post_data) {
                     setTimeout(function() {
-                        window.location.replace('thank-you.html');
+                        window.location.replace(successpage);
                     }, 500);
                 })
                 .fail(function(data) {
@@ -140,26 +140,46 @@
         }
         var onloadCallback = function() {
             grecaptcha.render('recaptcha1', {
-                'sitekey': '6LcQEOIbAAAAAAG9fC3yywvf-hpHP-pKywBUvPcm',
+                'sitekey': '6LelCgEVAAAAAK9gl4SaTTxbBVoVB6t0PJap8hhL',
                 'callback': function(response) {
                     var message = $('#contact-message').val();
                     var name = $('#contact-name').val();
                     var email = $('#contact-email').val();
-                    sendNameChoiceEmail(name, "", "mailswami-contact", email, message);
+                    sendNameChoiceEmail(name, "", "mailswami-contact", email, message, 'thank-you.html');
 
                 }
             });
             grecaptcha.render('recaptcha2', {
-                'sitekey': '6LcQEOIbAAAAAAG9fC3yywvf-hpHP-pKywBUvPcm',
+                'sitekey': '6LelCgEVAAAAAK9gl4SaTTxbBVoVB6t0PJap8hhL',
                 'callback': async function(response) {
                     //var message = $('#contact-message').val();
                     var name = $('#contact-name2').val();
                     var email = $('#contact-email2').val();
-                    sendNameChoiceEmail(name, "", "mailswami-signup", email, "messageslot");
+                    sendNameChoiceEmail(name, "", "mailswami-signup", email, "messageslot", 'thank-you.html');
 
                     var auth = userManager.getAuthKey();
                     var dataUrl = userManager.serverUrl + "/api/dashboard/register/account?auth=" + auth;
                     var responseJson = await userManager.fetchJson(dataUrl);
+
+                }
+            });
+            grecaptcha.render('recaptcha3', {
+                'sitekey': '6LelCgEVAAAAAK9gl4SaTTxbBVoVB6t0PJap8hhL',
+                'callback': function(response) {
+                    var message = $('#contact-message3').val();
+                    var name = $('#contact-name3').val();
+                    var email = $('#contact-email3').val();
+                    sendNameChoiceEmail(name, "", "leadspod-partner", email, message, 'thank-you.html');
+
+                }
+            });
+            grecaptcha.render('recaptcha4', {
+                'sitekey': '6LelCgEVAAAAAK9gl4SaTTxbBVoVB6t0PJap8hhL',
+                'callback': function(response) {
+                    var message = $('#contact-message4').val();
+                    var name = $('#contact-name4').val();
+                    var email = $('#contact-email4').val();
+                    sendNameChoiceEmail(name, "", "leadspod-demo", email, message, 'demo.html');
 
                 }
             });
@@ -258,7 +278,9 @@
         }
         
         #recaptcha1,
-        #recaptcha2 {
+        #recaptcha2,
+        #recaptcha3,
+        #recaptcha4 {
             display: none;
         }
         
@@ -281,13 +303,82 @@
         #resources {
             display: none;
         }
+        
+        @media screen and (max-width: 768px) {
+            img.hero-banner {
+                display: none;
+            }
+        }
+        
+        @media screen and (max-width: 468px) {
+            .navbar .navbar-brand {
+                max-width: 240px !important;
+            }
+        }
     </style>
 </head>
 
 <body class="boxed-layout">
 
 
+    <div class="modal fade" id="contactFormLong4" tabindex="-1" role="dialog" aria-labelledby="contactFormLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactFormLongTitle4">Leadspod Demo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p style="text-align: center;line-height: 20px;">What do you look for in an email tool? Your feedback helps us improve.</p>
+                    <div class="form">
+                        <form id="chimp-form4" class="subscribe-form" action="assets/php/subscribe.php" method="post" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" autocomplete="off" novalidate>
 
+                            <textarea class="mail" id="contact-message4" placeholder="Message" rows="6"></textarea>
+                            <input class="mail" id="contact-name4" type="text" name="name" placeholder="Your name" autocomplete="off">
+                            <input class="mail" id="contact-email4" type="email" name="email" placeholder="Your email" autocomplete="off"><input id="contact-submit4" class="submit-button" type="submit" value="Get Access">
+                        </form>
+                        <div id="recaptcha4"></div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="contactFormLong3" tabindex="-1" role="dialog" aria-labelledby="contactFormLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactFormLongTitle3">Partners</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p style="text-align: center;line-height: 20px;">We offer our partners discounts, support, and white label services. To apply, please tell us about your service.</p>
+                    <div class="form">
+                        <form id="chimp-form3" class="subscribe-form" action="assets/php/subscribe.php" method="post" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" autocomplete="off" novalidate>
+                            <textarea class="mail" id="contact-message3" placeholder="Message" rows="6"></textarea>
+                            <input class="mail" id="contact-name3" type="text" name="name" placeholder="Your name" autocomplete="off">
+                            <input class="mail" id="contact-email3" type="email" name="email" placeholder="Your email" autocomplete="off"><input id="contact-submit3" class="submit-button" type="submit" value="Submit">
+                        </form>
+                        <div id="recaptcha3"></div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -357,8 +448,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto navbar-right">
+                        <li class="nav-item"><a class="nav-link" href="#cta" data-toggle="modal" data-target="#contactFormLong4">Demo</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" id="resources" href="#resources">Learning</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#pricing">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#cta" data-toggle="modal" data-target="#contactFormLong3">Partner</a></li>
                         <li class="nav-item"><a class="nav-link" href="#cta" data-toggle="modal" data-target="#contactFormLong">Contact</a></li>
                         <li><a class="btn-nav btn-outline nav-link" id="login-btn" href="#cta" data-toggle="modal" data-target="#contactFormLong2">Login</a></li>
 
@@ -454,7 +547,7 @@
                             <div class="container">
                                 <div class="flex-inner flex-inverted align-center">
                                     <div class="f-image f-image-inverted">
-                                        <img style="width: 80%;" class="img-fluid" src="assets/images/mail-hero.png" alt="Feature">
+                                        <img class="hero-banner" style="width: 80%;" class="img-fluid" src="assets/images/mail-hero.png" alt="Feature">
                                     </div>
                                     <div class="f-text">
                                         <div class="left-content">
@@ -836,7 +929,7 @@
                                 </p>
                             </div>
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="table-left">
                                         <h2>Email <br> Warmup</h2>
                                         <br>
@@ -847,8 +940,8 @@
                                         </div>
                                         <br><br>
                                         <ul>
-                                            <li>Connect any email provider</li>
                                             <li>Auto email warm-up</li>
+                                            <li>Increase reputation</li>
                                             <li>Email deliverability booster</li>
                                             <li>Keep emails out of spam</li>
                                         </ul>
@@ -856,6 +949,7 @@
                                         <a class="btn-action register-btn" href="#cta" data-toggle="modal" data-target="#contactFormLong2">Signup</a>
                                     </div>
                                 </div>
+                                <!--
                                 <div class="col-md-4">
                                     <div class="table-right">
                                         <h2>Email <br>Relay Server</h2>
@@ -880,7 +974,8 @@
                                         <a class="btn-action register-btn" href="#cta" data-toggle="modal" data-target="#contactFormLong2">Signup</a>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                -->
+                                <div class="col-md-6">
                                     <div class="table-right">
                                         <h2>Email<br> Automation</h2>
                                         <br>
@@ -891,16 +986,24 @@
                                         </div>
                                         <br><br>
                                         <ul>
-                                            <li>Used by 200,000+ Organizations</li>
-                                            <li>Community support</li>
-                                            <li>Multiple user accounts</li>
+                                            <li>Unlimited user accounts</li>
+                                            <li>Unlimited number of campaigns</li>
+                                            <li>Unlimited number of emails</li>
+                                            <li>Advanced email routing</li>
+                                            <li>Advanced email scheduling</li>
+                                            <li>Unified Bounce management</li>
+                                            <li>Unlimited Email Providers</li>
                                             <li>Advanced segmentation</li>
+                                            <li>Spam analytics</li>
+                                            <li>Spam protection</li>
                                             <li>Email templates</li>
                                             <li>Dynamic content</li>
                                             <li>Lead scoring</li>
                                             <li>A/B testing</li>
-                                            <li>Landing pages</li>
                                             <li>Forms</li>
+                                            <li>Landing pages</li>
+                                            <li>Used by 200,000+ Organizations</li>
+                                            <li>Community support</li>
                                         </ul>
                                         <br>
                                         <a class="btn-action register-btn" href="#cta" data-toggle="modal" data-target="#contactFormLong2">Signup</a>
@@ -954,7 +1057,7 @@
                             </tr>
                             <tr>
                                 <td>Email Marketing</td>
-                                <td><b class="check">$ 24</b></td>
+                                <td><b class="check">$ 15</b></td>
                                 <td><b class="check">$ 59</b></td>
                                 <td><b class="check">$ 59</b></td>
                                 <td><b class="check">$ 19</b></td>
@@ -1053,7 +1156,7 @@
                             </tr>
                             <tr>
                                 <td>Email Marketing</td>
-                                <td><b class="check">$ 24</b></td>
+                                <td><b class="check">$ 15</b></td>
                                 <td><b class="check">$ 590</b></td>
                                 <td><b class="check">$ 590</b></td>
                                 <td><b class="check">$ 190</b></td>
@@ -1115,9 +1218,52 @@
 
             <!-- Features Section -->
 
+            <div id="cta" class="yd_cta_box">
+                <div class="container">
+                    <div class="cta_box">
+                        <div class="cta_box_inner">
+                            <div class="col-sm-12 col-md-12">
+                                <h4>Use Mautic for cold email</h4>
+                                <h2>We added smart scheduling and multiple email providers, Mautic is now the ideal cold email tool.</h2>
+                                <!--<a class="btn-action js-scroll-trigger" href="#pricing">Signup</a>
+                                <br><br>
+                                <a class="btn-action register-btn" href="#cta" data-toggle="modal" data-target="#contactFormLong2">Signup</a>-->
+                                <br><br><br>
+
+                                <img id="scheduler-img" style="_width: 100%;" src="/assets/images/scheduler.png">
+
+                                <br><br>
 
 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+
+            <div id="cta" class="yd_cta_box">
+                <div class="container">
+                    <div class="cta_box">
+                        <div class="cta_box_inner">
+                            <div class="col-sm-12 col-md-12">
+                                <h4>Perfect for agencies</h4>
+                                <h2>Create clear roles and permissions for clients and employees.</h2>
+                                <!--<a class="btn-action js-scroll-trigger" href="#pricing">Signup</a>
+                                <br><br>
+                                <a class="btn-action register-btn" href="#cta" data-toggle="modal" data-target="#contactFormLong2">Signup</a>-->
+                                <br><br><br>
+
+                                <img id="scheduler-img" style="_width: 100%;" src="/assets/images/roles.png">
+
+                                <br><br>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
             <div id="cta" class="yd_cta_box">
@@ -1230,38 +1376,104 @@
                                     <ul class="post-list">
                                         
                                         <li>
-                                            <h3><a href="/article/test/long-term-profit-with-good-email-communications.html">Long-term Profit with Good Email Communications</a></h3>
-                                            <p>The Complete Guide to Creating a Long-term Profit with Good Email Communications.</p>
+                                            <h3><a href="/article/news/no-response-how-to-follow-up.html">No Response! How to Follow Up.</a></h3>
+                                            <p>All set up for cold emailing?</p>
 
                                         </li>
                                         
                                         <li>
-                                            <h3><a href="/article/news/how-to-warmup-your-cold-email-list.html">How to Warm Up Your Cold Email List and Increase Deliverability</a></h3>
-                                            <p>Introduction: Why Cold Emails Fail &amp; The Dos and Don’ts of Sending an Effective Cold Email</p>
+                                            <h3><a href="/article/news/ideal-client-profile.html">Ideal client profile</a></h3>
+                                            <p><span class="title">Tailored and Targeted.</span></p>
 
                                         </li>
                                         
                                         <li>
-                                            <h3><a href="/article/news/how-to-improve-your-email-reputation.html">Ideal client guide</a></h3>
-                                            <p>With this guide, you can easily construct your cold email campaigns that get responses. Everyone who needs to reach out to someone they don’t know directly can profit from this e-book.</p>
+                                            <h3><a href="/article/news/how-to-write-ice-breakers.html">How to create icebreakers.</a></h3>
+                                            <p>Use icebreakers to attract your prospects.</p>
 
                                         </li>
                                         
                                         <li>
-                                            <h3><a href="/article/news/how-to-add-your-brand-to-gmail.html">Emails With a Profile Photo in Gmail</a></h3>
-                                            <p>The Complete Guide to Displaying Your Profile Photo in Gmail</p>
+                                            <h3><a href="/article/news/follow-up-the-reminder-sequence.html">Follow-up! The reminder sequence.</a></h3>
+                                            <p>How to dramatically increase your cold email response rates.</p>
+
+                                        </li>
+                                        
+                                        <li>
+                                            <h3><a href="/article/news/find-product-marketfit-or-die.html">Find product-market fit or die</a></h3>
+                                            <p>80% of all startups never find a product-market fit and die.</p>
+
+                                        </li>
+                                        
+                                        <li>
+                                            <h3><a href="/article/test/effecient-email-communications.html">Effecient Email Communications</a></h3>
+                                            <p>Good email communication helps your business.</p>
+
+                                        </li>
+                                        
+                                        <li>
+                                            <h3><a href="/article/news/common-cold-email-mistakes-most-of-us-make.html">Cold email mistakes most of us make</a></h3>
+                                            <p>Avoid these ten common cold emailing mistakes.</p>
+
+                                        </li>
+                                        
+                                        <li>
+                                            <h3><a href="/article/news/cold-emails-are-not-just-for-sales-or-business.html">Cold emails aren't just for sales or business</a></h3>
+                                            <p>The story of Maddie Bregman.</p>
+
+                                        </li>
+                                        
+                                        <li>
+                                            <h3><a href="/article/news/5-parts-to-a-great-email.html">Five parts for a great email. </a></h3>
+                                            <p>Email is the foundation of our daily communication.</p>
 
                                         </li>
                                         
                                         <li>
                                             <h3><a href="/article/news/10-tips-to-improve-your-cold-email.html">10 Tips To Improve Your Cold Emails</a></h3>
-                                            <p>Rather than cold-contacting people for their business, think out how to give value to their life first.</p>
+                                            <p>This article was just updated.</p>
+
+                                        </li>
+                                        
+                                        <li>
+                                            <h3><a href="/article/news/10-make-your-offer-a-no-brainer.html">Make your offer a no-brainer</a></h3>
+                                            <p>How to make your offer so strong that it becomes irresistible?</p>
+
+                                        </li>
+                                        
+                                        <li>
+                                            <h3><a href="/article/news/10-how-to-find-the-right-people-to-cold-email.html">How to find the right people to cold email</a></h3>
+                                            <p>If they don’t respond within two weeks, move down one level.</p>
+
+                                        </li>
+                                        
+                                        <li>
+                                            <h3><a href="/article/news/10-cold-email-or-marketing-email.html">Cold Email OR Marketing Email</a></h3>
+                                            <p>How to tell marketing emails from cold emails?</p>
+
+                                        </li>
+                                        
+                                        <li>
+                                            <h3><a href="/article/news/10-cold-email-deliverability-analysis.html">Cold email deliverability analysis (no tech)</a></h3>
+                                            <p>Why do cold emails fail?</p>
+
+                                        </li>
+                                        
+                                        <li>
+                                            <h3><a href="/article/news/10-a-step-by-step-how-we-use-cold-emails-to-get-clients-and-grow-our-business.html">A step by step how we use cold emails</a></h3>
+                                            <p>Use cold emails to get clients and grow our business.</p>
+
+                                        </li>
+                                        
+                                        <li>
+                                            <h3><a href="/article/news/10-Write-cold-email-that-transforms-strangers-into-customers.html">Transforming strangers into customers.</a></h3>
+                                            <p>Write a cold email that creates curiosity.</p>
 
                                         </li>
                                         
                                         <li>
                                             <h3><a href="/article/news/10-How-to-Prepare-an-Email-Account-for-Cold-Email-Sending.html">How to Prepare an Email Account for Cold Email Sending</a></h3>
-                                            <p>How to Prepare an Email Account for Cold Email Sending</p>
+                                            <p>Deliverability is critical when sending cold emails.</p>
 
                                         </li>
                                         

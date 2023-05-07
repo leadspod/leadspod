@@ -26,7 +26,8 @@ var userManager = (function () {
         },
         isLoggedIn : function(){
             var auth = userManager.getAuthKey();
-            if(auth != ""){
+            var email = userManager.getUserEmail();
+            if(auth != "" && email != "" && email != null){
                 return true;
             }else{
                 userManager.logOut();
@@ -106,7 +107,10 @@ var userManager = (function () {
         },
         logOut : function(){
             userManager.eraseCookie('authkey', "/");
-            userManager.eraseCookie('useremail', "/");
+            userManager.eraseCookie('useremail', "/"); 
+            
+            userManager.eraseCookie('authkey', "/public");
+            userManager.eraseCookie('useremail', "/public");
             
             document.body.classList.remove("dashboard");
         },
